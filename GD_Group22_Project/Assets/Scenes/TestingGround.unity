@@ -1819,6 +1819,8 @@ GameObject:
   - component: {fileID: 1360745094}
   - component: {fileID: 1360745093}
   - component: {fileID: 1360745092}
+  - component: {fileID: 1360745097}
+  - component: {fileID: 1360745096}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1918,6 +1920,59 @@ Transform:
   - {fileID: 1280529596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1360745096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360745091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7efeea98494ea364ea493feb8d7740a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSpeed: 9
+  crouchSpeed: 5
+  gravity: -9.81
+  groundCheck: {fileID: 431854010}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  standingHeight: 2
+  crouchingHeight: 1
+  crouchKey: 306
+  playerCamera: {fileID: 1280529596}
+  standCamHeight: 1.75
+  crouchCamHeight: 1
+  camLerpSpeed: 50
+  mouseSensitivity: 100
+--- !u!143 &1360745097
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360745091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
