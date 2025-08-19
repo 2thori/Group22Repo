@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="" />
+    <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor/KeyRaycast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor/KeyRaycast.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1755423956257</updated>
       <workItem from="1755423958262" duration="17000" />
-      <workItem from="1755586956220" duration="10682000" />
+      <workItem from="1755586956220" duration="9834000" />
     </task>
     <servers />
   </component>
