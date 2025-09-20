@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class FPControl : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Rigidbody rbPlayer;
+
+    private void Awake()
     {
-        
+        rbPlayer = GetComponent<Rigidbody>();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Jump()
+    { 
+        rbPlayer.AddForce(Vector3.up * 6f, ForceMode.Impulse);
+     
     }
+
+    
 }
