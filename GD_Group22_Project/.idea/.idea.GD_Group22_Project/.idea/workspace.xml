@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GreyboxScene.unity" beforeDir="false" />
@@ -14,6 +15,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor/KeyRaycast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor/KeyRaycast.cs" afterDir="false" />
 >>>>>>> parent of dbc16ff (Merge branch 'Nkosinathi_Titus')
     </list>
+=======
+    <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="" />
+>>>>>>> parent of 3599763 (Door, Key and inventory mechanics)
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,12 +28,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 3599763 (Door, Key and inventory mechanics)
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor/KeyDoorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor/KeyInventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor/KeyItemController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor/KeyRaycast.cs" root0="FORCE_HIGHLIGHTING" />
+<<<<<<< HEAD
 >>>>>>> parent of dbc16ff (Merge branch 'Nkosinathi_Titus')
+=======
+>>>>>>> parent of 3599763 (Door, Key and inventory mechanics)
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@63585d5be1b1/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity3d-PhysicsGun/Unity3d-PhysicsGun/Assets/OutlineEffect/Demo/OutlineAnimation.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -47,17 +57,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Reverting in Nkosinathi__Titus",
 =======
+=======
+>>>>>>> parent of 3599763 (Door, Key and inventory mechanics)
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Nkosinathi__Titus",
+<<<<<<< HEAD
 >>>>>>> parent of dbc16ff (Merge branch 'Nkosinathi_Titus')
+=======
+>>>>>>> parent of 3599763 (Door, Key and inventory mechanics)
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -130,6 +146,7 @@
       <workItem from="1755423958262" duration="17000" />
 <<<<<<< HEAD
       <workItem from="1755586956220" duration="10682000" />
+<<<<<<< HEAD
       <workItem from="1755611667289" duration="1000" />
       <workItem from="1755611729510" duration="5127000" />
       <workItem from="1756197959692" duration="499000" />
@@ -143,6 +160,8 @@
 =======
       <workItem from="1755586956220" duration="9834000" />
 >>>>>>> parent of dbc16ff (Merge branch 'Nkosinathi_Titus')
+=======
+>>>>>>> parent of 3599763 (Door, Key and inventory mechanics)
     </task>
     <servers />
   </component>
