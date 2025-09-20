@@ -699,9 +699,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4514946501949208732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47728bba5a5752647854caa6010f0283, type: 3}
+  m_Script: {fileID: 11500000, guid: c0c8bc0ba9042414e8ae4f80563dbced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 5609465995477009765}
+  tmpText: {fileID: 6519991654899090844}
+  legacyText: {fileID: 6325805145284604050}
+  minAngle: 1
+  maxAngle: 180
 --- !u!1 &7548975329547891972
 GameObject:
   m_ObjectHideFlags: 0

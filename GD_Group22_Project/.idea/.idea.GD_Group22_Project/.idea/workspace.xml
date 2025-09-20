@@ -5,16 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/ObjectPoolingScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/ObjectPoolingScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/New Shader Graph.shadergraph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/New Shader Graph.shadergraph.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/LaserMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/LaserMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Materials/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/X Axis.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/X Axis.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Y  Axis.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Y  Axis.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Z Axis.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Z Axis.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FPSController.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FPSController.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PhysicsGun.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PhysicsGun.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GreyboxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GreyboxScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemInteractionScripts/PlayerInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemInteractionScripts/PlayerInteractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials/LaserMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials/LaserMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials/X Axis.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials/X Axis.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials/Y  Axis.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials/Y  Axis.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials/Z Axis.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Materials/Z Axis.mat.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +142,8 @@
       <workItem from="1756988993908" duration="685000" />
       <workItem from="1757524655100" duration="1306000" />
       <workItem from="1757955698493" duration="5000" />
+      <workItem from="1758116438615" duration="609000" />
+      <workItem from="1758119642958" duration="2278000" />
     </task>
     <servers />
   </component>
