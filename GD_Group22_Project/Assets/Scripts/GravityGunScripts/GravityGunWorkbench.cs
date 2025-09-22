@@ -139,8 +139,7 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
         // Remove all required parts from inventory
         foreach (GravityGunPart part in requiredParts)
         {
-            // You'll need to add a RemovePart method to your inventory
-            // GravityGunPartsInventory.Instance.RemovePart(part);
+            GravityGunPartsInventory.Instance.RemovePart(part);
         }
 
         Debug.Log("Consumed all required parts for gravity gun assembly.");

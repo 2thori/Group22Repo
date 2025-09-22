@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Add TextMeshPro namespace
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     [Header("Gravity Gun Parts UI Elements")]
     [SerializeField] private Transform gravityGunPartsPanel;
     [SerializeField] private GameObject gravityGunPartImagePrefab;
-    [SerializeField] private TextMeshProUGUI partsProgressText; // Changed to TMP
+    [SerializeField] private TextMeshProUGUI partsProgressText;
     
     [Header("Settings")]
     [SerializeField] private bool debugMode = true;
@@ -267,15 +267,15 @@ public class UIManager : MonoBehaviour
             // Change color based on progress
             if (collected >= total)
             {
-                partsProgressText.color = Color.green; // All parts collected
+                partsProgressText.color = Color.green;
             }
             else if (collected >= total / 2)
             {
-                partsProgressText.color = Color.yellow; // Half or more collected
+                partsProgressText.color = Color.yellow;
             }
             else
             {
-                partsProgressText.color = Color.white; // Default color
+                partsProgressText.color = Color.white;
             }
         }
     }
@@ -310,18 +310,5 @@ public class UIManager : MonoBehaviour
     public void UpdateGravityGunProgress(int collected, int total)
     {
         UpdatePartsProgressText(collected, total);
-    }
-    public void RemoveGravityGunPartFromUI(GravityGunPart part)
-    {
-        if (partImages.ContainsKey(part))
-        {
-            Destroy(partImages[part]);
-            partImages.Remove(part);
-        
-            if (debugMode)
-            {
-                Debug.Log("Removed gravity gun part from UI: " + part.partName);
-            }
-        }
     }
 }
