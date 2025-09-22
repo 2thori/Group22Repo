@@ -16,17 +16,20 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
     [SerializeField] private GameObject assemblyPrompt;
     [SerializeField] private GameObject missingPartsPrompt;
 
+    [Header("Gravity Gun Prefab")]
+    [SerializeField] private GameObject gravityGunPrefab;
+    [SerializeField] private Transform gunSpawnPoint;
+
     private bool isGunAssembled = false;
     private bool isAnimating = false;
     private Vector3 targetPosition;
+    private GameObject spawnedGun;
 
     private void Start()
     {
-        // Initialize to disassembled position
         targetPosition = disassembledPosition;
         gravityGunPivot.localPosition = targetPosition;
         
-        // Hide prompts initially
         if (assemblyPrompt != null) assemblyPrompt.SetActive(false);
         if (missingPartsPrompt != null) missingPartsPrompt.SetActive(false);
     }
@@ -35,23 +38,24 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
     {
         if (isAnimating)
         {
-            // Move smoothly towards the target position
             gravityGunPivot.localPosition = Vector3.MoveTowards(
                 gravityGunPivot.localPosition,
                 targetPosition,
                 assemblySpeed * Time.deltaTime
             );
 
-            // Stop animating when close enough
             if (Vector3.Distance(gravityGunPivot.localPosition, targetPosition) < 0.01f)
             {
                 gravityGunPivot.localPosition = targetPosition;
                 isAnimating = false;
                 
-                // If fully assembled, notify other systems
                 if (isGunAssembled)
                 {
                     OnGravityGunAssembled();
+                }
+                else
+                {
+                    OnGravityGunDisassembled();
                 }
             }
         }
@@ -96,12 +100,9 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
         }
 
         isGunAssembled = !isGunAssembled;
-
-        // Set the target position
         targetPosition = isGunAssembled ? assembledPosition : disassembledPosition;
         isAnimating = true;
 
-        // Consume parts if assembling
         if (isGunAssembled && requiresParts)
         {
             ConsumeRequiredParts();
@@ -120,7 +121,6 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
             return false;
         }
 
-        // Check if player has all required parts
         foreach (GravityGunPart part in requiredParts)
         {
             if (!GravityGunPartsInventory.Instance.HasPart(part))
@@ -136,7 +136,6 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
     {
         if (GravityGunPartsInventory.Instance == null) return;
 
-        // Remove all required parts from inventory
         foreach (GravityGunPart part in requiredParts)
         {
             GravityGunPartsInventory.Instance.RemovePart(part);
@@ -149,8 +148,37 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
     {
         Debug.Log("Gravity gun has been assembled and is ready for use!");
         
-        // Notify other systems that the gravity gun is assembled
-        // For example: PlayerController.Instance.EnableGravityGun();
+        if (gravityGunPrefab != null && gunSpawnPoint != null)
+        {
+            spawnedGun = Instantiate(gravityGunPrefab, gunSpawnPoint.position, gunSpawnPoint.rotation);
+            
+            if (spawnedGun.GetComponent<Collider>() == null)
+            {
+                spawnedGun.AddComponent<BoxCollider>();
+            }
+            
+            if (spawnedGun.GetComponent<Rigidbody>() == null)
+            {
+                Rigidbody rb = spawnedGun.AddComponent<Rigidbody>();
+                rb.isKinematic = true;
+            }
+            
+            if (spawnedGun.GetComponent<GravityGunPickup>() == null)
+            {
+                spawnedGun.AddComponent<GravityGunPickup>();
+            }
+        }
+    }
+
+    private void OnGravityGunDisassembled()
+    {
+        Debug.Log("Gravity gun has been disassembled.");
+        
+        if (spawnedGun != null)
+        {
+            Destroy(spawnedGun);
+            spawnedGun = null;
+        }
     }
 
     private void ShowAssemblyPrompt()
@@ -185,10 +213,8 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
         if (missingPartsPrompt != null) missingPartsPrompt.SetActive(false);
     }
 
-    // For debugging purposes
     private void OnDrawGizmos()
     {
-        // Draw positions for easier setup
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position + assembledPosition, Vector3.one * 0.3f);
         

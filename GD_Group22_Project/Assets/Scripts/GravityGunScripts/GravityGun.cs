@@ -2,114 +2,127 @@ using UnityEngine;
 
 public class GravityGun : MonoBehaviour
 {
-    [SerializeField] private GameObject gravityGunModel;
-    [SerializeField] private GameObject pickupPrompt;
-    
-    private bool canBePickedUp = false;
-    private bool hasBeenPickedUp = false;
+    [Header("Gravity Gun Settings")]
+    [SerializeField] private float pickupRange = 10f;
+    [SerializeField] private float throwForce = 10f;
+    [SerializeField] private float holdDistance = 3f;
+    [SerializeField] private LayerMask pickupLayer;
+    [SerializeField] private Transform holdPosition;
+    [SerializeField] private KeyCode interactKey = KeyCode.E;
+    [SerializeField] private KeyCode throwKey = KeyCode.Mouse0;
+    [SerializeField] private KeyCode rotateKey = KeyCode.Mouse1;
+
+    private Camera playerCamera;
+    private GameObject heldObject;
+    private Rigidbody heldObjectRb;
+    private bool isHoldingObject = false;
+    private float rotationSpeed = 5f;
 
     private void Start()
     {
-        // Initially disable the gravity gun
-        if (gravityGunModel != null)
-        {
-            gravityGunModel.SetActive(false);
-        }
+        playerCamera = Camera.main;
         
-        // Hide pickup prompt initially
-        if (pickupPrompt != null)
+        // Create hold position if not assigned
+        if (holdPosition == null)
         {
-            pickupPrompt.SetActive(false);
-        }
-        
-        // Subscribe to the event for when all parts are collected
-        GravityGunPartsInventory.OnAllPartsCollected += EnableGravityGun;
-    }
-
-    private void OnDestroy()
-    {
-        // Unsubscribe from the event
-        GravityGunPartsInventory.OnAllPartsCollected -= EnableGravityGun;
-    }
-
-    private void EnableGravityGun()
-    {
-        canBePickedUp = true;
-        
-        // Enable the gravity gun model
-        if (gravityGunModel != null)
-        {
-            gravityGunModel.SetActive(true);
-        }
-        
-        Debug.Log("Gravity gun is now available for pickup!");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && canBePickedUp && !hasBeenPickedUp)
-        {
-            // Show pickup prompt
-            if (pickupPrompt != null)
-            {
-                pickupPrompt.SetActive(true);
-            }
+            GameObject holdPosObj = new GameObject("HoldPosition");
+            holdPosObj.transform.SetParent(playerCamera.transform);
+            holdPosObj.transform.localPosition = new Vector3(0, 0, holdDistance);
+            holdPosition = holdPosObj.transform;
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && canBePickedUp && !hasBeenPickedUp)
-        {
-            // Check for input to pick up the gravity gun
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                PickupGravityGun(other.gameObject);
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player") && pickupPrompt != null)
-        {
-            pickupPrompt.SetActive(false);
-        }
-    }
-
-    private void PickupGravityGun(GameObject player)
-    {
-        hasBeenPickedUp = true;
-        
-        // Hide the gravity gun model and prompt
-        if (gravityGunModel != null)
-        {
-            gravityGunModel.SetActive(false);
-        }
-        
-        if (pickupPrompt != null)
-        {
-            pickupPrompt.SetActive(false);
-        }
-        
-        // Enable gravity gun functionality on the player
-        // You would add your gravity gun script to the player here
-        // For example: player.AddComponent<GravityGunController>();
-        
-        Debug.Log("Gravity gun picked up!");
-        
-        // Notify other systems that the gravity gun was picked up
-        // You could add an event here similar to the parts collection event
-    }
-    
-    // For debugging purposes
     private void Update()
     {
-        // Debug command to enable the gravity gun without collecting all parts
-        if (Input.GetKeyDown(KeyCode.P) && !canBePickedUp)
+        if (Input.GetKeyDown(interactKey))
         {
-            EnableGravityGun();
-            Debug.Log("DEBUG: Gravity gun enabled via cheat code");
+            if (isHoldingObject)
+            {
+                ReleaseObject();
+            }
+            else
+            {
+                TryPickupObject();
+            }
         }
+
+        if (isHoldingObject)
+        {
+            // Move the object to the hold position
+            if (heldObjectRb)
+            {
+                heldObjectRb.linearVelocity = Vector3.zero;
+                heldObject.transform.position = Vector3.Lerp(
+                    heldObject.transform.position, 
+                    holdPosition.position, 
+                    Time.deltaTime * 10f
+                );
+
+                // Rotate object if right mouse button is held
+                if (Input.GetKey(rotateKey))
+                {
+                    float xRot = Input.GetAxis("Mouse X") * rotationSpeed;
+                    float yRot = Input.GetAxis("Mouse Y") * rotationSpeed;
+                    heldObject.transform.Rotate(playerCamera.transform.up, -xRot, Space.World);
+                    heldObject.transform.Rotate(playerCamera.transform.right, yRot, Space.World);
+                }
+
+                // Throw object if left mouse button is pressed
+                if (Input.GetKeyDown(throwKey))
+                {
+                    ThrowObject();
+                }
+            }
+        }
+    }
+
+    private void TryPickupObject()
+    {
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+    
+        if (Physics.Raycast(ray, out hit, pickupRange, pickupLayer))
+        {
+            if (hit.collider.attachedRigidbody != null)
+            {
+                heldObject = hit.collider.gameObject;
+                heldObjectRb = hit.collider.attachedRigidbody;
+                heldObjectRb.useGravity = false;
+                heldObjectRb.linearDamping = 10;
+                heldObjectRb.constraints = RigidbodyConstraints.FreezeRotation;
+                
+                isHoldingObject = true;
+            }
+        }
+    }
+
+    private void ReleaseObject()
+    {
+        if (heldObjectRb)
+        {
+            heldObjectRb.useGravity = true;
+            heldObjectRb.linearDamping = 1;
+            heldObjectRb.constraints = RigidbodyConstraints.None;
+        }
+        
+        heldObject = null;
+        heldObjectRb = null;
+        isHoldingObject = false;
+    }
+
+    private void ThrowObject()
+    {
+        if (heldObjectRb)
+        {
+            ReleaseObject();
+            heldObjectRb.AddForce(playerCamera.transform.forward * throwForce, ForceMode.Impulse);
+        }
+    }
+
+    // Visualize the pickup range in the editor
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, pickupRange);
     }
 }
