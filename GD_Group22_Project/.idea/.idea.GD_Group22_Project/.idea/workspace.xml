@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DoorSystem/BlueCardKey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DoorSystem/BlueCardKey.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DoorSystem/OrangeCardKey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DoorSystem/OrangeCardKey.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DoorSystem/RedCardKey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DoorSystem/RedCardKey.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ModelTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ModelTestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeyRaycastDoor.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,34 +24,37 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="31PRvvKxVnkf7MrliFt98TAg3zk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Nkosinathi__Titus&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Nkosinathi__2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Nkosi\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Nkosi\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Nkosi\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Nkosi\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Nkosi\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Nkosi\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.53f1-x86_64\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.53f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Nkosi\OneDrive\Documents\GitHub\Group22Repo\GD_Group22_Project -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Nkosi\OneDrive\Documents\GitHub\Group22Repo\GD_Group22_Project" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -67,7 +62,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.53f1-x86_64\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.53f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Nkosi\OneDrive\Documents\GitHub\Group22Repo\GD_Group22_Project -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Nkosi\OneDrive\Documents\GitHub\Group22Repo\GD_Group22_Project" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -107,6 +102,7 @@
       <workItem from="1755586956220" duration="10682000" />
       <workItem from="1755611667289" duration="1000" />
       <workItem from="1755611729510" duration="5127000" />
+      <workItem from="1758396215976" duration="597000" />
     </task>
     <servers />
   </component>
