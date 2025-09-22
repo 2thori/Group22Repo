@@ -11,24 +11,31 @@ public class GravityGunPickup : MonoBehaviour, IInteractable
     
     private void PickupGravityGun()
     {
-        // Find the player
+        // Find the player more safely
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        if (player == null)
         {
-            // Add the gravity gun to the player
-            GravityGun gravityGun = player.GetComponent<GravityGun>();
-            if (gravityGun == null)
-            {
-                gravityGun = player.AddComponent<GravityGun>();
-            }
-            
-            // Enable the gravity gun
-            gravityGun.enabled = true;
-            
-            // Attach to player's hand or camera
-            Transform playerCamera = player.GetComponentInChildren<Camera>().transform;
-            transform.SetParent(playerCamera);
-            transform.localPosition = new Vector3(0.5f, -0.5f, 1f);
+            Debug.LogError("Player not found! Make sure your player has the 'Player' tag.");
+            return;
+        }
+
+        // Check if player already has a gravity gun
+        if (player.GetComponent<GravityGun>() != null)
+        {
+            Debug.Log("Player already has a gravity gun!");
+            return;
+        }
+
+        // Add the gravity gun component to the player
+        GravityGun gravityGun = player.AddComponent<GravityGun>();
+        gravityGun.enabled = true;
+        
+        // Attach to player's camera
+        Camera playerCamera = player.GetComponentInChildren<Camera>();
+        if (playerCamera != null)
+        {
+            transform.SetParent(playerCamera.transform);
+            transform.localPosition = new Vector3(0.3f, -0.2f, 0.5f);
             transform.localRotation = Quaternion.identity;
             
             // Disable physics
@@ -47,14 +54,18 @@ public class GravityGunPickup : MonoBehaviour, IInteractable
             
             Debug.Log("Picked up the gravity gun!");
         }
+        else
+        {
+            Debug.LogError("Player camera not found!");
+        }
     }
     
     // Show interaction text when player looks at the gun
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // You might want to implement a UI system to show interaction prompts
+            // Show UI prompt
             Debug.Log(interactText);
         }
     }

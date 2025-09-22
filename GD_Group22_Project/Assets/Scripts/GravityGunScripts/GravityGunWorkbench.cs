@@ -150,23 +150,50 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
         
         if (gravityGunPrefab != null && gunSpawnPoint != null)
         {
+            // Destroy any existing gun first
+            if (spawnedGun != null)
+            {
+                Destroy(spawnedGun);
+            }
+            
+            // Spawn the new gun
             spawnedGun = Instantiate(gravityGunPrefab, gunSpawnPoint.position, gunSpawnPoint.rotation);
+            Debug.Log("Gravity gun spawned successfully!");
             
-            if (spawnedGun.GetComponent<Collider>() == null)
-            {
-                spawnedGun.AddComponent<BoxCollider>();
-            }
-            
-            if (spawnedGun.GetComponent<Rigidbody>() == null)
-            {
-                Rigidbody rb = spawnedGun.AddComponent<Rigidbody>();
-                rb.isKinematic = true;
-            }
-            
-            if (spawnedGun.GetComponent<GravityGunPickup>() == null)
-            {
-                spawnedGun.AddComponent<GravityGunPickup>();
-            }
+            // Make sure the gun has the necessary components
+            SetupSpawnedGun(spawnedGun);
+        }
+        else
+        {
+            Debug.LogError("Gravity gun prefab or spawn point is not assigned in the inspector!");
+        }
+    }
+
+    private void SetupSpawnedGun(GameObject gunObject)
+    {
+        // Add Rigidbody if missing
+        if (gunObject.GetComponent<Rigidbody>() == null)
+        {
+            Rigidbody rb = gunObject.AddComponent<Rigidbody>();
+            rb.isKinematic = true;
+        }
+
+        // Add Collider if missing
+        if (gunObject.GetComponent<Collider>() == null)
+        {
+            gunObject.AddComponent<BoxCollider>();
+        }
+
+        // Add GravityGunPickup component if missing
+        if (gunObject.GetComponent<GravityGunPickup>() == null)
+        {
+            gunObject.AddComponent<GravityGunPickup>();
+        }
+
+        // Make sure the gun has the GravityGun component
+        if (gunObject.GetComponent<GravityGun>() == null)
+        {
+            Debug.LogWarning("Spawned gravity gun prefab is missing the GravityGun component!");
         }
     }
 
@@ -220,5 +247,12 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
         
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + disassembledPosition, Vector3.one * 0.3f);
+        
+        // Draw spawn point
+        if (gunSpawnPoint != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(gunSpawnPoint.position, 0.2f);
+        }
     }
 }
