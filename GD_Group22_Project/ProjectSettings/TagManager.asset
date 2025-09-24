@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - GravityGunPickup
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PickupLayer
   - Water
   - UI
   - 
