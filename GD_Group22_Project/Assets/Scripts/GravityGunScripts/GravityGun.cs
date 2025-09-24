@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,6 +29,10 @@ public class GravityGun : MonoBehaviour
     [SerializeField] private Material cannotPickupMaterial;
     [SerializeField] private float lineWidth = 0.02f;
 
+    [Header("Glow Settings")]
+    [SerializeField] private Color glowColor = Color.cyan;
+    [SerializeField] private float glowIntensity = 2f;
+
     [Header("Gun Pickup Settings")]
     [SerializeField] private float gunPickupRadius = 2f;
     [SerializeField] private KeyCode pickUpGunKey = KeyCode.E;
@@ -38,7 +43,7 @@ public class GravityGun : MonoBehaviour
     private Rigidbody heldObjectRb;
     private bool isHoldingObject = false;
     private bool isGunEquipped = false;
-    private bool isGunInInventory = false; // Track if player has picked up the gun
+    private bool isGunInInventory = false;
     private Vector3 currentHoldOffset;
     private RaycastHit hitInfo;
     private bool isHit;
@@ -52,17 +57,19 @@ public class GravityGun : MonoBehaviour
     private GameObject gravityGunPickup;
     private bool isGunInRange = false;
 
+    // Beam/firing state
+    private bool isFiring = false;
+
     private void Start()
     {
         InitializeComponents();
         SetupInputActions();
         SetupVisuals();
-        
+
         // Start with gun unequipped and not in inventory
         UnequipGun();
         isGunInInventory = false;
-        
-        // Make sure gun model is hidden initially
+
         if (gunModel != null)
             gunModel.SetActive(false);
     }
@@ -101,6 +108,8 @@ public class GravityGun : MonoBehaviour
         {
             grabAction.action.Enable();
             grabAction.action.performed += OnGrab;
+            // We keep canceled if you later switch to a hold-while-fired scheme
+            grabAction.action.canceled += ctx => { /* optionally handle hold-release */ };
         }
 
         if (throwAction != null)
@@ -117,7 +126,7 @@ public class GravityGun : MonoBehaviour
             aimRayRenderer.positionCount = 2;
             aimRayRenderer.startWidth = lineWidth;
             aimRayRenderer.endWidth = lineWidth;
-            aimRayRenderer.enabled = false;
+            aimRayRenderer.enabled = false; // NOTE: beam is only enabled when fired
         }
     }
 
@@ -128,12 +137,17 @@ public class GravityGun : MonoBehaviour
         {
             CheckForGunPickup();
         }
-        
+
         // Only process gravity gun functionality if equipped
         if (!isGunEquipped) return;
 
         UpdateRaycast();
-        UpdateVisualFeedback();
+
+        // Only update visual beam positions when beam is visible (fired) or when holding
+        if (aimRayRenderer != null && (aimRayRenderer.enabled || isHoldingObject))
+        {
+            UpdateVisualFeedback();
+        }
 
         if (isHoldingObject)
         {
@@ -143,7 +157,6 @@ public class GravityGun : MonoBehaviour
 
     private void CheckForGunPickup()
     {
-        // Look for gravity gun pickup in range
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, gunPickupRadius);
         isGunInRange = false;
         gravityGunPickup = null;
@@ -158,7 +171,6 @@ public class GravityGun : MonoBehaviour
             }
         }
 
-        // Check for pickup input
         if (isGunInRange && Input.GetKeyDown(pickUpGunKey))
         {
             PickUpGun();
@@ -169,15 +181,13 @@ public class GravityGun : MonoBehaviour
     {
         if (gravityGunPickup != null)
         {
-            // Destroy the pickup object
             Destroy(gravityGunPickup);
             gravityGunPickup = null;
             isGunInRange = false;
-            
-            // Add gun to inventory and auto-equip it
+
             isGunInInventory = true;
             EquipGun();
-            
+
             Debug.Log("Gravity Gun added to inventory!");
         }
     }
@@ -185,7 +195,7 @@ public class GravityGun : MonoBehaviour
     private void OnEquipToggle(InputAction.CallbackContext context)
     {
         if (!context.performed || !isGunInInventory) return;
-        
+
         if (isGunEquipped)
         {
             UnequipGun();
@@ -199,13 +209,10 @@ public class GravityGun : MonoBehaviour
     private void EquipGun()
     {
         if (!isGunInInventory) return;
-        
+
         isGunEquipped = true;
-        
-        // Enable visuals
-        if (aimRayRenderer != null)
-            aimRayRenderer.enabled = true;
-        
+
+        // Do NOT enable the beam here — beam shows only when fired
         if (gunModel != null)
             gunModel.SetActive(true);
 
@@ -214,16 +221,14 @@ public class GravityGun : MonoBehaviour
 
     private void UnequipGun()
     {
-        // Release any held object
         if (isHoldingObject)
             ReleaseObject();
-        
+
         isGunEquipped = false;
-        
-        // Disable visuals
-        if (aimRayRenderer != null)
-            aimRayRenderer.enabled = false;
-        
+
+        // Ensure beam off
+        SetBeamActive(false);
+
         if (gunModel != null)
             gunModel.SetActive(false);
 
@@ -245,11 +250,18 @@ public class GravityGun : MonoBehaviour
         Vector3 rayStart = playerCamera.transform.position;
         Vector3 rayEnd = isHit ? hitInfo.point : rayStart + playerCamera.transform.forward * pickupRange;
 
+        // If holding an object, lock the line to it
+        if (isHoldingObject && heldObject != null)
+        {
+            rayEnd = heldObject.transform.position;
+        }
+
         aimRayRenderer.SetPosition(0, rayStart);
         aimRayRenderer.SetPosition(1, rayEnd);
 
         bool canPickup = isHit && hitInfo.rigidbody != null && !hitInfo.rigidbody.isKinematic;
-        aimRayRenderer.material = canPickup ? canPickupMaterial : cannotPickupMaterial;
+        if (aimRayRenderer.material != null)
+            aimRayRenderer.material = canPickup ? canPickupMaterial : cannotPickupMaterial;
     }
 
     private void HandleObjectMovement()
@@ -257,7 +269,7 @@ public class GravityGun : MonoBehaviour
         if (!isHoldingObject || heldObjectRb == null || playerCamera == null) return;
 
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
-        
+
         if (mouseDelta.magnitude > 0.1f)
         {
             Vector3 movement = new Vector3(
@@ -268,10 +280,10 @@ public class GravityGun : MonoBehaviour
 
             Vector3 cameraRight = playerCamera.transform.right;
             Vector3 cameraUp = playerCamera.transform.up;
-            
+
             currentHoldOffset += cameraRight * movement.x;
             currentHoldOffset += cameraUp * movement.y;
-            
+
             float scroll = Mouse.current.scroll.ReadValue().y * 0.1f;
             currentHoldOffset.z = Mathf.Clamp(currentHoldOffset.z + scroll, 1f, pickupRange);
         }
@@ -280,7 +292,8 @@ public class GravityGun : MonoBehaviour
 
         Vector3 targetPosition = holdPosition.position;
         Vector3 smoothPosition = Vector3.Lerp(heldObjectRb.position, targetPosition, smoothSpeed * Time.deltaTime);
-        
+
+        // Use standard Rigidbody property
         heldObjectRb.linearVelocity = (smoothPosition - heldObjectRb.position) / Time.deltaTime;
 
         Quaternion targetRotation = Quaternion.LookRotation(playerCamera.transform.position - heldObjectRb.position);
@@ -293,13 +306,22 @@ public class GravityGun : MonoBehaviour
 
         if (context.performed)
         {
+            // Fire the beam (visible while trying to pick up and while holding)
+            SetBeamActive(true);
+
             if (!isHoldingObject)
             {
                 TryPickupObject();
+
+                // If pickup failed, hide the beam
+                if (!isHoldingObject)
+                    SetBeamActive(false);
             }
             else
             {
+                // If already holding, pressing grab releases the object
                 ReleaseObject();
+                SetBeamActive(false);
             }
         }
     }
@@ -309,6 +331,7 @@ public class GravityGun : MonoBehaviour
         if (context.performed && isGunEquipped && isHoldingObject)
         {
             ThrowObject();
+            SetBeamActive(false);
         }
     }
 
@@ -336,6 +359,9 @@ public class GravityGun : MonoBehaviour
 
             isHoldingObject = true;
 
+            // Apply glow (non-destructive)
+            ApplyGlow(heldObject, true);
+
             Debug.Log($"Grabbed: {heldObject.name}");
         }
     }
@@ -344,10 +370,16 @@ public class GravityGun : MonoBehaviour
     {
         if (heldObjectRb != null)
         {
-            // Restore original properties
+            // Restore physics properties
             heldObjectRb.useGravity = originalGravity;
             heldObjectRb.linearDamping = originalDrag;
             heldObjectRb.constraints = originalConstraints;
+        }
+
+        // Remove glow before clearing references
+        if (heldObject != null)
+        {
+            ApplyGlow(heldObject, false);
         }
 
         heldObject = null;
@@ -361,9 +393,53 @@ public class GravityGun : MonoBehaviour
     {
         if (heldObjectRb != null)
         {
+            // Store references to apply force after release
+            Rigidbody rbToThrow = heldObjectRb;
+            GameObject objToThrow = heldObject;
+
             ReleaseObject();
-            heldObjectRb.AddForce(playerCamera.transform.forward * throwForce, ForceMode.Impulse);
-            Debug.Log("Object thrown");
+
+            // Apply impulse to stored object
+            if (rbToThrow != null)
+            {
+                rbToThrow.AddForce(playerCamera.transform.forward * throwForce, ForceMode.Impulse);
+                Debug.Log("Object thrown");
+            }
+        }
+    }
+
+    private void SetBeamActive(bool active)
+    {
+        if (aimRayRenderer == null) return;
+
+        aimRayRenderer.enabled = active;
+    }
+
+    // Glow via MaterialPropertyBlock (non-destructive)
+    private void ApplyGlow(GameObject obj, bool enable)
+    {
+        if (obj == null) return;
+
+        Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
+        foreach (var r in renderers)
+        {
+            if (r == null) continue;
+            MaterialPropertyBlock block = new MaterialPropertyBlock();
+            r.GetPropertyBlock(block);
+
+            if (enable)
+            {
+                // Set emission color (shader must support _EmissionColor)
+                block.SetColor("_EmissionColor", glowColor * glowIntensity);
+                // To ensure emission is visible, enable keyword on the material instance if necessary
+                // (MaterialPropertyBlock can't toggle keywords) - many standard shaders respect _EmissionColor only
+            }
+            else
+            {
+                block.SetColor("_EmissionColor", Color.black);
+            }
+
+            r.SetPropertyBlock(block);
         }
     }
 
@@ -378,7 +454,7 @@ public class GravityGun : MonoBehaviour
     {
         if (isHoldingObject)
             ReleaseObject();
-        
+
         if (isGunEquipped)
             UnequipGun();
 
@@ -400,14 +476,12 @@ public class GravityGun : MonoBehaviour
     // Visualize in editor
     private void OnDrawGizmosSelected()
     {
-        // Draw gun pickup radius (only if we don't have the gun yet)
         if (!isGunInInventory)
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(transform.position, gunPickupRadius);
         }
 
-        // Draw gravity gun range and hold position
         if (playerCamera != null && isGunEquipped)
         {
             Gizmos.color = Color.yellow;
@@ -430,25 +504,6 @@ public class GravityGun : MonoBehaviour
     }
 
     // Public methods for other scripts to interact with the gravity gun
-    public bool IsGunEquipped()
-    {
-        return isGunEquipped;
-    }
-
-    public bool IsGunInInventory()
-    {
-        return isGunInInventory;
-    }
-
-    public bool IsGunPickupInRange()
-    {
-        return isGunInRange;
-    }
-
-    // Method to force add the gun to inventory (for debugging or special cases)
-    public void AddGunToInventory()
-    {
-        isGunInInventory = true;
-        EquipGun();
-    }
+    public bool IsGunEquipped() => isGunEquipped;
+    public bool IsGunInInventory() => isGunInInventory;
 }
