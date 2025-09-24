@@ -28,6 +28,7 @@ public class KeyInventory : MonoBehaviour
       {
          keyIds.Add(key.id);
          Debug.Log($"key added:{key.keyName} (ID:{key.id}");
+         UIManager.Instance.AddKeyToUI(key);
       }
    }
 
