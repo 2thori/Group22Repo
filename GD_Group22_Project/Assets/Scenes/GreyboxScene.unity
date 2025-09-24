@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 8938333}
   - component: {fileID: 8938332}
   - component: {fileID: 8938331}
-  - component: {fileID: 8938335}
+  - component: {fileID: 8938336}
   m_Layer: 0
   m_Name: GravityGunPart 3
   m_TagString: Untagged
@@ -243,7 +243,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8938329}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8938335
+--- !u!114 &8938336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,14 +252,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8938329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3cbc45e94fa57f47a2232941819748b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f698d7ae3ffca945ac1bb7d3cb3fb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowColor: {r: 0, g: 1, b: 1, a: 1}
+  pulseColor: {r: 0, g: 1, b: 1, a: 1}
   pulseSpeed: 2
   minIntensity: 0.5
   maxIntensity: 2
-  glowWhenNearWorkbench: 1
 --- !u!1 &73089438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,7 +2257,7 @@ GameObject:
   - component: {fileID: 657254519}
   - component: {fileID: 657254518}
   - component: {fileID: 657254521}
-  - component: {fileID: 657254522}
+  - component: {fileID: 657254523}
   m_Layer: 0
   m_Name: GravityGunPart 1
   m_TagString: Untagged
@@ -2369,7 +2368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 11400000, guid: cbcca74ff162b5344a20595525b5f8c7, type: 2}
   collectEffect: {fileID: 0}
---- !u!114 &657254522
+--- !u!114 &657254523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2378,14 +2377,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 657254516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3cbc45e94fa57f47a2232941819748b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f698d7ae3ffca945ac1bb7d3cb3fb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowColor: {r: 0, g: 1, b: 1, a: 1}
+  pulseColor: {r: 0, g: 1, b: 1, a: 1}
   pulseSpeed: 2
   minIntensity: 0.5
   maxIntensity: 2
-  glowWhenNearWorkbench: 0
 --- !u!43 &679429168
 Mesh:
   m_ObjectHideFlags: 0
@@ -3329,7 +3327,7 @@ GameObject:
   - component: {fileID: 1189256583}
   - component: {fileID: 1189256582}
   - component: {fileID: 1189256581}
-  - component: {fileID: 1189256585}
+  - component: {fileID: 1189256586}
   m_Layer: 0
   m_Name: GravityGunPart 2
   m_TagString: Untagged
@@ -3440,7 +3438,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189256579}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1189256585
+--- !u!114 &1189256586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3449,14 +3447,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189256579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3cbc45e94fa57f47a2232941819748b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f698d7ae3ffca945ac1bb7d3cb3fb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowColor: {r: 0, g: 1, b: 1, a: 1}
+  pulseColor: {r: 0, g: 1, b: 1, a: 1}
   pulseSpeed: 2
   minIntensity: 0.5
   maxIntensity: 2
-  glowWhenNearWorkbench: 0
 --- !u!43 &1258165832
 Mesh:
   m_ObjectHideFlags: 0
@@ -14524,6 +14521,7 @@ GameObject:
   - component: {fileID: 8977186106946151934}
   - component: {fileID: 8977186106946151933}
   - component: {fileID: 8977186106946151935}
+  - component: {fileID: 8977186106946151936}
   m_Layer: 0
   m_Name: GravityGunWorkBench
   m_TagString: Untagged
@@ -14618,6 +14616,22 @@ MonoBehaviour:
   missingPartsPrompt: {fileID: 135029916}
   gravityGunPrefab: {fileID: 347417859266253124, guid: 51c95d741013a4f4d9ea502da98aa979, type: 3}
   gunSpawnPoint: {fileID: 450647361}
+--- !u!114 &8977186106946151936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953043858038712416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f698d7ae3ffca945ac1bb7d3cb3fb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseColor: {r: 0.85660374, g: 0.48692882, b: 0, a: 1}
+  pulseSpeed: 0.3
+  minIntensity: 0
+  maxIntensity: 0.3
 --- !u!23 &8999069929238093352
 MeshRenderer:
   m_ObjectHideFlags: 0
