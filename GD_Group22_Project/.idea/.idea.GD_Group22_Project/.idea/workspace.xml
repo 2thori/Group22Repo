@@ -6,37 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DoorSystem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Key Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Key Sprites/BlueCardKey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Key Sprites/BlueCardKey.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Key Sprites/OrangeCardKey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Key Sprites/OrangeCardKey.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Key Sprites/RedCardKey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Key Sprites/RedCardKey.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lit Variant 2 Variant 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Lit Variant 2 Variant 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lit Variant 2 Variant.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Lit Variant 2 Variant.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lit Variant 2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lit Variant 2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lit Variant 3 Variant 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lit Variant 3 Variant 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lit Variant 3 Variant 2 Variant.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Lit Variant 3 Variant 2 Variant.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lit Variant 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Lit Variant 3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Parts Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Parts Sprites/Parts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Parts Sprites/Parts.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GreyboxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GreyboxScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets/Materials/LaserMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets/Materials/LaserMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets/Textures/13330-laserbeamblue.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets/Textures/13330-laserbeamblue.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets/Textures/laserbeamGreen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_PhysicsGunAssets/Textures/laserbeamGreen.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationScripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartGlow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartGlow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineRenderer.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +26,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartsInventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPickup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineRenderer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scripts/GunLineRenderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PulseColor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@63585d5be1b1/Shaders/Lit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity3d-PhysicsGun/Unity3d-PhysicsGun/Assets/OutlineEffect/OutlineEffect.cs" root0="SKIP_HIGHLIGHTING" />
@@ -151,7 +123,7 @@
       <workItem from="1755611729510" duration="5127000" />
       <workItem from="1758396215665" duration="21873000" />
       <workItem from="1758628068406" duration="1718000" />
-      <workItem from="1758674095133" duration="4769000" />
+      <workItem from="1758674095133" duration="5783000" />
     </task>
     <servers />
   </component>
