@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GreyboxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GreyboxScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,6 +124,7 @@
       <workItem from="1759411919878" duration="127000" />
       <workItem from="1759773163522" duration="93000" />
       <workItem from="1759773316778" duration="721000" />
+      <workItem from="1760798664477" duration="6000" />
     </task>
     <servers />
   </component>
