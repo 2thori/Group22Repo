@@ -5,6 +5,9 @@ public class GravityGunPartCollectable : MonoBehaviour, IInteractable
     [SerializeField] private GravityGunPart part;
     [SerializeField] private GameObject collectEffect;
     
+    // Public property to access the part
+    public GravityGunPart Part => part;
+    
     public void Interact()
     {
         CollectPart();
