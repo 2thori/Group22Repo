@@ -16,6 +16,7 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
     [Header("Spawn Settings")]
     [SerializeField] private GameObject gravityGunChemicalPrefab;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private float spawnScale = 0.3f; // Adjusted to reasonable size
     
     [Header("UI Elements")]
     [SerializeField] private GameObject mixPrompt;
@@ -34,9 +35,6 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         }
         
         UpdateStatusText();
-        
-        // Debug log to check if everything is assigned
-        Debug.Log($"ChemicalWorkbench Start - Prefab: {gravityGunChemicalPrefab != null}, SpawnPoint: {spawnPoint != null}, Recipe: {gravityGunChemicalRecipe != null}");
     }
     
     public void Interact()
@@ -90,7 +88,6 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
             return false;
         }
         
-        // Check if we have all required chemicals
         foreach (var chemicalReq in gravityGunChemicalRecipe.requiredChemicals)
         {
             if (!ChemicalInventory.Instance.HasChemical(chemicalReq.chemical, chemicalReq.amount))
@@ -99,7 +96,6 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
             }
         }
         
-        // Check if we have all required apparatus
         foreach (var apparatusReq in gravityGunChemicalRecipe.requiredApparatus)
         {
             if (!ChemicalInventory.Instance.HasApparatus(apparatusReq))
@@ -118,13 +114,11 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         
         Debug.Log("Starting chemical mixing process...");
         
-        // Consume required chemicals
         foreach (var chemicalReq in gravityGunChemicalRecipe.requiredChemicals)
         {
             ChemicalInventory.Instance.RemoveChemical(chemicalReq.chemical, chemicalReq.amount);
         }
         
-        // Play reaction effects
         if (reactionParticles != null)
         {
             reactionParticles.Play();
@@ -141,16 +135,13 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
             AudioSource.PlayClipAtPoint(reactionSound, transform.position);
         }
         
-        // Update status during mixing
         if (statusText != null)
         {
             statusText.text = "Mixing in progress...";
         }
         
-        // Wait for reaction to complete
         yield return new WaitForSeconds(gravityGunChemicalRecipe.mixTime);
         
-        // Complete the reaction
         if (reactionLight != null)
         {
             reactionLight.enabled = false;
@@ -161,7 +152,6 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
             AudioSource.PlayClipAtPoint(successSound, transform.position);
         }
         
-        // Spawn the gravity gun chemical
         SpawnGravityGunChemical();
         
         Debug.Log("Chemical mixing complete!");
@@ -172,115 +162,25 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
     
     private void SpawnGravityGunChemical()
     {
-        Debug.Log("=== SPAWNING GRAVITY GUN CHEMICAL ===");
-        
-        // Check if prefab is assigned
         if (gravityGunChemicalPrefab == null)
         {
-            Debug.LogError("❌ CRITICAL: Gravity Gun Chemical Prefab is NOT assigned in inspector!");
+            Debug.LogError("Gravity Gun Chemical Prefab is not assigned!");
             return;
         }
-        else
-        {
-            Debug.Log("✅ Prefab is assigned: " + gravityGunChemicalPrefab.name);
-        }
 
-        // Check if spawn point is assigned
         if (spawnPoint == null)
         {
-            Debug.LogError("❌ CRITICAL: Spawn Point is NOT assigned in inspector!");
+            Debug.LogError("Spawn Point is not assigned!");
             return;
         }
-        else
-        {
-            Debug.Log("✅ Spawn Point is assigned at position: " + spawnPoint.position);
-        }
 
-        // Instantiate the object
-        Debug.Log("Instantiating prefab...");
         GameObject chemical = Instantiate(gravityGunChemicalPrefab, spawnPoint.position, spawnPoint.rotation);
-        
-        if (chemical == null)
-        {
-            Debug.LogError("❌ INSTANTIATE FAILED: Object is null after Instantiate!");
-            return;
-        }
-        else
-        {
-            Debug.Log("✅ Instantiate successful: " + chemical.name);
-        }
-
-        // Make sure the object is active
         chemical.SetActive(true);
-        Debug.Log("✅ Object set to active");
-
-        // Setup all required components
-        SetupSpawnedObject(chemical);
         
-        Debug.Log("🎉 SPAWN COMPLETE: Gravity gun chemical should be visible now!");
-    }
-    
-    private void SetupSpawnedObject(GameObject chemical)
-    {
-        // Check for renderer
-        Renderer renderer = chemical.GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            renderer.enabled = true;
-            Debug.Log("✅ Renderer found and enabled");
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ No Renderer component found on spawned object");
-        }
-
-        // Check for collider
-        Collider collider = chemical.GetComponent<Collider>();
-        if (collider != null)
-        {
-            collider.enabled = true;
-            Debug.Log("✅ Collider found and enabled");
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ No Collider found, adding BoxCollider");
-            chemical.AddComponent<BoxCollider>();
-        }
-
-        // Check for Rigidbody
-        Rigidbody rb = chemical.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = false;
-            Debug.Log("✅ Rigidbody found and set to non-kinematic");
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ No Rigidbody found, adding one");
-            Rigidbody newRb = chemical.AddComponent<Rigidbody>();
-            newRb.isKinematic = false;
-        }
-
-        // Check for GravityGunPartCollectable script
-        GravityGunPartCollectable collectable = chemical.GetComponent<GravityGunPartCollectable>();
-        if (collectable != null)
-        {
-            Debug.Log("✅ GravityGunPartCollectable found");
-            
-            // Use the public property to check if part is assigned
-            if (collectable.Part == null)
-            {
-                Debug.LogError("❌ GravityGunPartCollectable has no part assigned!");
-            }
-            else
-            {
-                Debug.Log("✅ Part assigned: " + collectable.Part.partName);
-            }
-        }
-        else
-        {
-            Debug.LogError("❌ No GravityGunPartCollectable found on the chemical prefab!");
-        }
+        // Set the scale to a reasonable size (0.3 is good for most objects)
+        chemical.transform.localScale = Vector3.one * spawnScale;
+        
+        Debug.Log($"Spawned gravity gun chemical at scale: {spawnScale}");
     }
 
     private void UpdateStatusText()
@@ -318,13 +218,11 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         if (missingItemsPrompt != null) missingItemsPrompt.SetActive(false);
     }
     
-    // TEST METHOD: Add this to test spawning without the mixing process
+    // Optional: Keep this for testing, remove when done
     private void Update()
     {
-        // Test spawn with T key (remove this method once spawning works)
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Debug.Log("=== MANUAL SPAWN TEST ===");
             SpawnGravityGunChemical();
         }
     }
