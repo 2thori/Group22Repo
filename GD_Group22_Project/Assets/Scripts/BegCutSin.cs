@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class BegCutSin : MonoBehaviour
 {
-     void OnEnable()
+    void OnEnable()
     {
-        //only specifying the scene name will load the scene with the single mode 
-        SceneManager.LoadScene("GreyboxScene", LoadSceneMode.Single);
-
+        //specifying scene name will loa the scene with the single mode
+        SceneManager.LoadScene("GrayBoxScene", LoadSceneMode.Single);
     }
 }

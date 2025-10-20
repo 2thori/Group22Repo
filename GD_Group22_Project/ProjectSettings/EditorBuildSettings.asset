@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BegCutSin.unity
     guid: 9a54e0c35059ae749b8b0e54d76e5b1f
-  - enabled: 1
-    path: Assets/Scenes/GreyboxScene.unity
+  - enabled: 0
+    path: Assets/Scenes/Jake/MainMenuInteractive.unity
     guid: 28e855209bcf47f4bb162f1171aa99a3
+  - enabled: 1
+    path: Assets/Scenes/GrayBoxScene.unity
+    guid: 3ffae3b03ffd7bb409e6218b36743fec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
