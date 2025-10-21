@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2774079709854960758}
   - component: {fileID: 1680665685509025902}
   - component: {fileID: 596640221764188636}
+  - component: {fileID: 19443612223623681}
   m_Layer: 0
   m_Name: Gravitygun
   m_TagString: GravityGunPickup
@@ -108,3 +109,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &19443612223623681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347417859266253124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe74b6cadde0c047bbd247ae3d80901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: E to pick up Gravity Gun
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []

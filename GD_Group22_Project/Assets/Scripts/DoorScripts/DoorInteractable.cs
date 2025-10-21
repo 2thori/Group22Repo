@@ -20,8 +20,13 @@ public class DoorInteractable : MonoBehaviour
     [SerializeField] private float slideSpeed = 2f;
 
     [Header("Lock Settings")]
-    [SerializeField] private bool islocked = false;
+    [SerializeField] private bool isLocked = false;
     [SerializeField] private Key requiredKey;
+
+    [Header("Interaction Text")]
+    [SerializeField] private string lockedText = "Locked - Need Key";
+    [SerializeField] private string openText = "Press E to Open";
+    [SerializeField] private string closeText = "Press E to Close";
 
     private bool isDoorOpen = false;
     private bool isAnimating = false;
@@ -36,6 +41,13 @@ public class DoorInteractable : MonoBehaviour
     private Vector3 closedPosition;
     private Vector3 openPosition;
 
+    // Public property to check if door is locked
+    public bool IsLocked 
+    { 
+        get { return isLocked; } 
+        set { isLocked = value; }
+    }
+
     private void Start()
     {
         InitializeDoor();
@@ -45,52 +57,57 @@ public class DoorInteractable : MonoBehaviour
     {
         if (doorType == DoorType.Rotating)
         {
-            // Initialize rotation settings
-            closedRotation = Quaternion.Euler(doorPivot.localEulerAngles.x, closeAngle, doorPivot.localEulerAngles.z);
-            openRotation = Quaternion.Euler(doorPivot.localEulerAngles.x, openAngle, doorPivot.localEulerAngles.z);
-            targetRotation = closedRotation;
-            doorPivot.localRotation = closedRotation;
+            if (doorPivot != null)
+            {
+                closedRotation = Quaternion.Euler(doorPivot.localEulerAngles.x, closeAngle, doorPivot.localEulerAngles.z);
+                openRotation = Quaternion.Euler(doorPivot.localEulerAngles.x, openAngle, doorPivot.localEulerAngles.z);
+                targetRotation = closedRotation;
+                doorPivot.localRotation = closedRotation;
+            }
         }
-        else // Sliding
+        else
         {
-            // Initialize sliding settings
-            closedPosition = doorTransform.localPosition;
-            openPosition = closedPosition + slideDirection.normalized * slideDistance;
-            targetPosition = closedPosition;
-            doorTransform.localPosition = closedPosition;
+            if (doorTransform != null)
+            {
+                closedPosition = doorTransform.localPosition;
+                openPosition = closedPosition + slideDirection.normalized * slideDistance;
+                targetPosition = closedPosition;
+                doorTransform.localPosition = closedPosition;
+            }
         }
     }
 
     private void Update()
     {
+        HandleDoorAnimation();
+    }
+
+    private void HandleDoorAnimation()
+    {
         if (isAnimating)
         {
-            if (doorType == DoorType.Rotating)
+            if (doorType == DoorType.Rotating && doorPivot != null)
             {
-                // Rotate smoothly towards the target rotation
                 doorPivot.localRotation = Quaternion.RotateTowards(
                     doorPivot.localRotation,
                     targetRotation,
                     rotationSpeed * 100f * Time.deltaTime
                 );
 
-                // Stop animating when close enough
                 if (Quaternion.Angle(doorPivot.localRotation, targetRotation) < 0.1f)
                 {
                     doorPivot.localRotation = targetRotation;
                     isAnimating = false;
                 }
             }
-            else // Sliding
+            else if (doorType == DoorType.Sliding && doorTransform != null)
             {
-                // Move smoothly towards the target position
                 doorTransform.localPosition = Vector3.MoveTowards(
                     doorTransform.localPosition,
                     targetPosition,
                     slideSpeed * Time.deltaTime
                 );
 
-                // Stop animating when close enough to target position
                 if (Vector3.Distance(doorTransform.localPosition, targetPosition) < 0.01f)
                 {
                     doorTransform.localPosition = targetPosition;
@@ -102,16 +119,19 @@ public class DoorInteractable : MonoBehaviour
 
     public void ToggleDoor()
     {
-        if (islocked)
+        if (isLocked)
         {
-            if (KeyInventory.Instance.Haskey(requiredKey))
+            // Check if player has the required key
+            bool hasKey = CheckForKey();
+            
+            if (hasKey)
             {
-                Debug.Log($"Door '{gameObject.name}' unlocked with the correct key: {requiredKey.keyName}.");
-                islocked = false;
+                Debug.Log($"Door '{gameObject.name}' unlocked with the correct key!");
+                isLocked = false;
             }
             else
             {
-                Debug.Log($"Door '{gameObject.name}' is locked. You need the correct key: {requiredKey.keyName}.");
+                Debug.Log($"Door '{gameObject.name}' is locked. You need the correct key!");
                 return;
             }
         }
@@ -120,11 +140,11 @@ public class DoorInteractable : MonoBehaviour
 
         isDoorOpen = !isDoorOpen;
 
-        if (doorType == DoorType.Rotating)
+        if (doorType == DoorType.Rotating && doorPivot != null)
         {
             targetRotation = isDoorOpen ? openRotation : closedRotation;
         }
-        else // Sliding
+        else if (doorType == DoorType.Sliding && doorTransform != null)
         {
             targetPosition = isDoorOpen ? openPosition : closedPosition;
         }
@@ -132,17 +152,54 @@ public class DoorInteractable : MonoBehaviour
         isAnimating = true;
     }
 
-    // Method to change door type at runtime if needed
-    public void SetDoorType(DoorType newType)
+    private bool CheckForKey()
     {
-        if (doorType != newType)
+        // Check if we have a KeyInventory system and if we have the required key
+        if (requiredKey == null)
         {
-            // Reset to closed state before switching
-            if (isAnimating) isAnimating = false;
-            isDoorOpen = false;
-            
-            doorType = newType;
-            InitializeDoor();
+            Debug.LogWarning("Door is locked but no required key is set!");
+            return false;
+        }
+
+        if (KeyInventory.Instance != null)
+        {
+            return KeyInventory.Instance.Haskey(requiredKey);
+        }
+        
+        Debug.LogWarning("No KeyInventory instance found!");
+        return false;
+    }
+
+    // Method for the interaction system to get the appropriate text
+    public string GetInteractionText()
+    {
+        if (isLocked)
+        {
+            if (requiredKey != null)
+            {
+                return $"{lockedText} ({requiredKey.keyName})";
+            }
+            return lockedText;
+        }
+        else
+        {
+            return isDoorOpen ? closeText : openText;
+        }
+    }
+
+    // Method to lock/unlock the door
+    public void SetLocked(bool locked)
+    {
+        isLocked = locked;
+    }
+
+    // Method to unlock the door with a key (for external scripts)
+    public void UnlockDoor(Key key)
+    {
+        if (key == requiredKey)
+        {
+            isLocked = false;
+            Debug.Log($"Door '{gameObject.name}' unlocked!");
         }
     }
 
@@ -151,14 +208,12 @@ public class DoorInteractable : MonoBehaviour
     {
         if (doorType == DoorType.Rotating && doorPivot != null)
         {
-            // Draw rotation arc
             Gizmos.color = Color.blue;
             Gizmos.matrix = doorPivot.localToWorldMatrix;
             DrawWireArc(Vector3.zero, Vector3.up, Vector3.forward, openAngle, 1f);
         }
         else if (doorType == DoorType.Sliding && doorTransform != null)
         {
-            // Draw slide direction
             Gizmos.color = Color.green;
             Vector3 worldClosedPos = transform.TransformPoint(closedPosition);
             Vector3 worldOpenPos = transform.TransformPoint(closedPosition + slideDirection.normalized * slideDistance);
@@ -169,7 +224,6 @@ public class DoorInteractable : MonoBehaviour
         }
     }
 
-    // Helper method for drawing rotation arc
     private void DrawWireArc(Vector3 position, Vector3 axis, Vector3 from, float angle, float radius)
     {
         int segments = 20;
