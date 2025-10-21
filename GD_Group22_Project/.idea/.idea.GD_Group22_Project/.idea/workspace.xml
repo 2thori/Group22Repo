@@ -7,10 +7,10 @@
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ElectroFluid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ElectroFluid.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jake/MainMenuInteractive.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jake/MainMenuInteractive.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalWorkbench.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalWorkbench.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DoorScripts/DoorInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DoorScripts/DoorInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +35,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartsInventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPickup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/New Folder/NT_PlayerInteract.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/New Folder/NT_interactObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PulseColor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinConditionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@63585d5be1b1/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity3d-PhysicsGun/Unity3d-PhysicsGun/Assets/OutlineEffect/OutlineEffect.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -56,7 +60,7 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Work-Around&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -142,6 +146,8 @@
       <workItem from="1760899557323" duration="3000" />
       <workItem from="1760899591645" duration="1000" />
       <workItem from="1760901430643" duration="7427000" />
+      <workItem from="1760997258166" duration="589000" />
+      <workItem from="1761041621338" duration="14846000" />
     </task>
     <servers />
   </component>
