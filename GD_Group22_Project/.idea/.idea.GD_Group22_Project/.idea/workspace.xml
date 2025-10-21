@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ElectroFluid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ElectroFluid.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalWorkbench.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalWorkbench.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DoorScripts/DoorInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DoorScripts/DoorInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/autobus-bold-font/Autobusbold-1ynL SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/autobus-bold-font/Autobusbold-1ynL SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LEDLIGHT SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LEDLIGHT SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +43,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PulseColor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinConditionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinConditions/AreaTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinConditions/RobustAreaTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@63585d5be1b1/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity3d-PhysicsGun/Unity3d-PhysicsGun/Assets/OutlineEffect/OutlineEffect.cs" root0="SKIP_HIGHLIGHTING" />
@@ -148,6 +153,7 @@
       <workItem from="1760901430643" duration="7427000" />
       <workItem from="1760997258166" duration="589000" />
       <workItem from="1761041621338" duration="14846000" />
+      <workItem from="1761067754717" duration="2100000" />
     </task>
     <servers />
   </component>
