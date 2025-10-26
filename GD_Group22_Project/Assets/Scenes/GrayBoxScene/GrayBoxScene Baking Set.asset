@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4881f9a2c4d568047b316028d20a8dca, type: 3}
   m_Name: GrayBoxScene Baking Set
   m_EditorClassIdentifier: 
-  singleSceneMode: 1
+  singleSceneMode: 0
   dialogNoProbeVolumeInSetShown: 0
   settings:
     m_Version: 1
@@ -30,19 +30,20 @@ MonoBehaviour:
       rayOriginBias: -0.001
       collisionMask:
         serializedVersion: 2
-        m_Bits: 4294967291
+        m_Bits: 0
   m_SceneGUIDs:
   - 3ffae3b03ffd7bb409e6218b36743fec
   obsoleteScenesToNotBake: []
   m_LightingScenarios:
   - Default
+  - New Lighting Scenario
   cellDescs:
     m_Keys: 00000000e600000002000000e800000004000000ea00000006000000ec00000008000000ee0000000a000000f00000000c000000f20000000e000000f400000010000000f600000012000000f800000014000000fa00000016000000fc00000018000000fe0000001a000000000100001c000000020100001e0000000401000020000000060100002200000008010000240000000a010000260000000c010000280000000e0100002a000000100100002c000000120100002e0000001401000030000000160100003200000018010000340000001a010000360000001c010000380000001e0100003a000000200100003c000000220100003e0000002401000040000000260100004200000028010000440000002a010000460000002c010000480000002e0100004a000000300100004c000000320100004e0000003401000050000000360100005200000038010000540000003a010000560000003c010000580000003e0100005a000000400100005c000000420100005e0000004401000060000000460100006200000048010000640000004a010000660000004c010000680000004e0100006a000000500100006c000000520100006e0000005401000070000000560100007200000058010000740000005a010000760000005c010000780000005e0100007a000000600100007c000000620100007e0000006401000080000000660100008200000068010000840000006a010000860000006c010000880000006e0100008a000000700100008c000000720100008e0000007401000090000000760100009200000078010000940000007a010000960000007c010000980000007e0100009a000000800100009c000000820100009e00000084010000a000000086010000a200000088010000a40000008a010000a60000008c010000a80000008e010000aa00000090010000ac00000092010000ae00000094010000b000000096010000b200000098010000b40000009a010000b60000009c010000b80000009e010000ba000000a0010000bc000000a2010000be000000a4010000c0000000a6010000c2000000a8010000c4000000aa010000c6000000ac010000c8000000ae010000ca000000b0010000cc000000b2010000ce000000b4010000d0000000b6010000d2000000b8010000d4000000ba010000d6000000bc010000d8000000be010000da000000c0010000dc000000c2010000de000000c4010000e0000000c6010000e2000000c8010000
     m_Values:
     - position: {x: -1, y: -1, z: -1}
       index: 0
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -55,14 +56,14 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: -1, y: -1, z: 0}
       index: 230
-      probeCount: 11648
-      minSubdiv: 0
-      indexChunkCount: 91
-      shChunkCount: 2
-      bricksCount: 182
+      probeCount: 64
+      minSubdiv: 3
+      indexChunkCount: 1
+      shChunkCount: 1
+      bricksCount: 1
       indirectionEntryInfo:
       - positionInBricks: {x: -27, y: -27, z: 0}
-        minSubdiv: 0
+        minSubdiv: 3
         minBrickPos: {x: 0, y: 0, z: 0}
         maxBrickPosPlusOne: {x: 28, y: 28, z: 28}
         hasMinMax: 1
@@ -70,7 +71,7 @@ MonoBehaviour:
     - position: {x: -1, y: 0, z: -1}
       index: 2
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -83,14 +84,14 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: -1, y: 0, z: 0}
       index: 232
-      probeCount: 8896
-      minSubdiv: 0
-      indexChunkCount: 91
-      shChunkCount: 2
-      bricksCount: 139
+      probeCount: 64
+      minSubdiv: 3
+      indexChunkCount: 1
+      shChunkCount: 1
+      bricksCount: 1
       indirectionEntryInfo:
       - positionInBricks: {x: -27, y: 0, z: 0}
-        minSubdiv: 0
+        minSubdiv: 3
         minBrickPos: {x: 0, y: 0, z: 0}
         maxBrickPosPlusOne: {x: 28, y: 28, z: 28}
         hasMinMax: 1
@@ -98,7 +99,7 @@ MonoBehaviour:
     - position: {x: -1, y: 1, z: -1}
       index: 4
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -112,7 +113,7 @@ MonoBehaviour:
     - position: {x: -1, y: 1, z: 0}
       index: 234
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -126,7 +127,7 @@ MonoBehaviour:
     - position: {x: -1, y: 2, z: -1}
       index: 6
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -140,7 +141,7 @@ MonoBehaviour:
     - position: {x: -1, y: 2, z: 0}
       index: 236
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -154,7 +155,7 @@ MonoBehaviour:
     - position: {x: -1, y: 3, z: -1}
       index: 8
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -168,7 +169,7 @@ MonoBehaviour:
     - position: {x: -1, y: 3, z: 0}
       index: 238
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -182,7 +183,7 @@ MonoBehaviour:
     - position: {x: -1, y: 4, z: -1}
       index: 10
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -196,7 +197,7 @@ MonoBehaviour:
     - position: {x: -1, y: 4, z: 0}
       index: 240
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -210,7 +211,7 @@ MonoBehaviour:
     - position: {x: -1, y: 5, z: -1}
       index: 12
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -224,7 +225,7 @@ MonoBehaviour:
     - position: {x: -1, y: 5, z: 0}
       index: 242
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -238,7 +239,7 @@ MonoBehaviour:
     - position: {x: -1, y: 6, z: -1}
       index: 14
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -252,7 +253,7 @@ MonoBehaviour:
     - position: {x: -1, y: 6, z: 0}
       index: 244
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -266,7 +267,7 @@ MonoBehaviour:
     - position: {x: -1, y: 7, z: -1}
       index: 16
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -280,7 +281,7 @@ MonoBehaviour:
     - position: {x: -1, y: 7, z: 0}
       index: 246
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -294,7 +295,7 @@ MonoBehaviour:
     - position: {x: -1, y: 8, z: -1}
       index: 18
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -308,7 +309,7 @@ MonoBehaviour:
     - position: {x: -1, y: 8, z: 0}
       index: 248
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -322,7 +323,7 @@ MonoBehaviour:
     - position: {x: -1, y: 9, z: -1}
       index: 20
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -336,7 +337,7 @@ MonoBehaviour:
     - position: {x: -1, y: 9, z: 0}
       index: 250
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -350,7 +351,7 @@ MonoBehaviour:
     - position: {x: -1, y: 10, z: -1}
       index: 22
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -364,7 +365,7 @@ MonoBehaviour:
     - position: {x: -1, y: 10, z: 0}
       index: 252
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -378,7 +379,7 @@ MonoBehaviour:
     - position: {x: -1, y: 11, z: -1}
       index: 24
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -392,7 +393,7 @@ MonoBehaviour:
     - position: {x: -1, y: 11, z: 0}
       index: 254
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -406,7 +407,7 @@ MonoBehaviour:
     - position: {x: -1, y: 12, z: -1}
       index: 26
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -420,7 +421,7 @@ MonoBehaviour:
     - position: {x: -1, y: 12, z: 0}
       index: 256
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -434,7 +435,7 @@ MonoBehaviour:
     - position: {x: -1, y: 13, z: -1}
       index: 28
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -448,7 +449,7 @@ MonoBehaviour:
     - position: {x: -1, y: 13, z: 0}
       index: 258
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -462,7 +463,7 @@ MonoBehaviour:
     - position: {x: -1, y: 14, z: -1}
       index: 30
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -476,7 +477,7 @@ MonoBehaviour:
     - position: {x: -1, y: 14, z: 0}
       index: 260
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -490,7 +491,7 @@ MonoBehaviour:
     - position: {x: -1, y: 15, z: -1}
       index: 32
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -504,7 +505,7 @@ MonoBehaviour:
     - position: {x: -1, y: 15, z: 0}
       index: 262
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -518,7 +519,7 @@ MonoBehaviour:
     - position: {x: -1, y: 16, z: -1}
       index: 34
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -532,7 +533,7 @@ MonoBehaviour:
     - position: {x: -1, y: 16, z: 0}
       index: 264
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -546,7 +547,7 @@ MonoBehaviour:
     - position: {x: -1, y: 17, z: -1}
       index: 36
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -560,7 +561,7 @@ MonoBehaviour:
     - position: {x: -1, y: 17, z: 0}
       index: 266
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -574,7 +575,7 @@ MonoBehaviour:
     - position: {x: -1, y: 18, z: -1}
       index: 38
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -588,7 +589,7 @@ MonoBehaviour:
     - position: {x: -1, y: 18, z: 0}
       index: 268
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -602,7 +603,7 @@ MonoBehaviour:
     - position: {x: -1, y: 19, z: -1}
       index: 40
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -616,7 +617,7 @@ MonoBehaviour:
     - position: {x: -1, y: 19, z: 0}
       index: 270
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -630,7 +631,7 @@ MonoBehaviour:
     - position: {x: -1, y: 20, z: -1}
       index: 42
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -644,7 +645,7 @@ MonoBehaviour:
     - position: {x: -1, y: 20, z: 0}
       index: 272
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -658,7 +659,7 @@ MonoBehaviour:
     - position: {x: -1, y: 21, z: -1}
       index: 44
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -672,7 +673,7 @@ MonoBehaviour:
     - position: {x: -1, y: 21, z: 0}
       index: 274
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -686,7 +687,7 @@ MonoBehaviour:
     - position: {x: -1, y: 22, z: -1}
       index: 46
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -700,7 +701,7 @@ MonoBehaviour:
     - position: {x: -1, y: 22, z: 0}
       index: 276
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -714,7 +715,7 @@ MonoBehaviour:
     - position: {x: -1, y: 23, z: -1}
       index: 48
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -728,7 +729,7 @@ MonoBehaviour:
     - position: {x: -1, y: 23, z: 0}
       index: 278
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -742,7 +743,7 @@ MonoBehaviour:
     - position: {x: -1, y: 24, z: -1}
       index: 50
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -756,7 +757,7 @@ MonoBehaviour:
     - position: {x: -1, y: 24, z: 0}
       index: 280
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -770,7 +771,7 @@ MonoBehaviour:
     - position: {x: -1, y: 25, z: -1}
       index: 52
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -784,7 +785,7 @@ MonoBehaviour:
     - position: {x: -1, y: 25, z: 0}
       index: 282
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -798,7 +799,7 @@ MonoBehaviour:
     - position: {x: -1, y: 26, z: -1}
       index: 54
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -812,7 +813,7 @@ MonoBehaviour:
     - position: {x: -1, y: 26, z: 0}
       index: 284
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -826,7 +827,7 @@ MonoBehaviour:
     - position: {x: -1, y: 27, z: -1}
       index: 56
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -840,7 +841,7 @@ MonoBehaviour:
     - position: {x: -1, y: 27, z: 0}
       index: 286
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -854,7 +855,7 @@ MonoBehaviour:
     - position: {x: -1, y: 28, z: -1}
       index: 58
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -868,7 +869,7 @@ MonoBehaviour:
     - position: {x: -1, y: 28, z: 0}
       index: 288
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -882,7 +883,7 @@ MonoBehaviour:
     - position: {x: -1, y: 29, z: -1}
       index: 60
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -896,7 +897,7 @@ MonoBehaviour:
     - position: {x: -1, y: 29, z: 0}
       index: 290
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -910,7 +911,7 @@ MonoBehaviour:
     - position: {x: -1, y: 30, z: -1}
       index: 62
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -924,7 +925,7 @@ MonoBehaviour:
     - position: {x: -1, y: 30, z: 0}
       index: 292
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -938,7 +939,7 @@ MonoBehaviour:
     - position: {x: -1, y: 31, z: -1}
       index: 64
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -952,7 +953,7 @@ MonoBehaviour:
     - position: {x: -1, y: 31, z: 0}
       index: 294
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -966,7 +967,7 @@ MonoBehaviour:
     - position: {x: -1, y: 32, z: -1}
       index: 66
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -980,7 +981,7 @@ MonoBehaviour:
     - position: {x: -1, y: 32, z: 0}
       index: 296
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -994,7 +995,7 @@ MonoBehaviour:
     - position: {x: -1, y: 33, z: -1}
       index: 68
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1008,7 +1009,7 @@ MonoBehaviour:
     - position: {x: -1, y: 33, z: 0}
       index: 298
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1022,7 +1023,7 @@ MonoBehaviour:
     - position: {x: -1, y: 34, z: -1}
       index: 70
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1036,7 +1037,7 @@ MonoBehaviour:
     - position: {x: -1, y: 34, z: 0}
       index: 300
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1050,7 +1051,7 @@ MonoBehaviour:
     - position: {x: -1, y: 35, z: -1}
       index: 72
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1064,7 +1065,7 @@ MonoBehaviour:
     - position: {x: -1, y: 35, z: 0}
       index: 302
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1078,7 +1079,7 @@ MonoBehaviour:
     - position: {x: -1, y: 36, z: -1}
       index: 74
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1092,7 +1093,7 @@ MonoBehaviour:
     - position: {x: -1, y: 36, z: 0}
       index: 304
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1106,7 +1107,7 @@ MonoBehaviour:
     - position: {x: -1, y: 37, z: -1}
       index: 76
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1120,7 +1121,7 @@ MonoBehaviour:
     - position: {x: -1, y: 37, z: 0}
       index: 306
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1134,7 +1135,7 @@ MonoBehaviour:
     - position: {x: -1, y: 38, z: -1}
       index: 78
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1148,7 +1149,7 @@ MonoBehaviour:
     - position: {x: -1, y: 38, z: 0}
       index: 308
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1162,7 +1163,7 @@ MonoBehaviour:
     - position: {x: -1, y: 39, z: -1}
       index: 80
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1176,7 +1177,7 @@ MonoBehaviour:
     - position: {x: -1, y: 39, z: 0}
       index: 310
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1190,7 +1191,7 @@ MonoBehaviour:
     - position: {x: -1, y: 40, z: -1}
       index: 82
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1204,7 +1205,7 @@ MonoBehaviour:
     - position: {x: -1, y: 40, z: 0}
       index: 312
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1218,7 +1219,7 @@ MonoBehaviour:
     - position: {x: -1, y: 41, z: -1}
       index: 84
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1232,7 +1233,7 @@ MonoBehaviour:
     - position: {x: -1, y: 41, z: 0}
       index: 314
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1246,7 +1247,7 @@ MonoBehaviour:
     - position: {x: -1, y: 42, z: -1}
       index: 86
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1260,7 +1261,7 @@ MonoBehaviour:
     - position: {x: -1, y: 42, z: 0}
       index: 316
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1274,7 +1275,7 @@ MonoBehaviour:
     - position: {x: -1, y: 43, z: -1}
       index: 88
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1288,7 +1289,7 @@ MonoBehaviour:
     - position: {x: -1, y: 43, z: 0}
       index: 318
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1302,7 +1303,7 @@ MonoBehaviour:
     - position: {x: -1, y: 44, z: -1}
       index: 90
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1316,7 +1317,7 @@ MonoBehaviour:
     - position: {x: -1, y: 44, z: 0}
       index: 320
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1330,7 +1331,7 @@ MonoBehaviour:
     - position: {x: -1, y: 45, z: -1}
       index: 92
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1344,7 +1345,7 @@ MonoBehaviour:
     - position: {x: -1, y: 45, z: 0}
       index: 322
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1358,7 +1359,7 @@ MonoBehaviour:
     - position: {x: -1, y: 46, z: -1}
       index: 94
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1372,7 +1373,7 @@ MonoBehaviour:
     - position: {x: -1, y: 46, z: 0}
       index: 324
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1386,7 +1387,7 @@ MonoBehaviour:
     - position: {x: -1, y: 47, z: -1}
       index: 96
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1400,7 +1401,7 @@ MonoBehaviour:
     - position: {x: -1, y: 47, z: 0}
       index: 326
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1414,7 +1415,7 @@ MonoBehaviour:
     - position: {x: -1, y: 48, z: -1}
       index: 98
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1428,7 +1429,7 @@ MonoBehaviour:
     - position: {x: -1, y: 48, z: 0}
       index: 328
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1442,7 +1443,7 @@ MonoBehaviour:
     - position: {x: -1, y: 49, z: -1}
       index: 100
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1456,7 +1457,7 @@ MonoBehaviour:
     - position: {x: -1, y: 49, z: 0}
       index: 330
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1470,7 +1471,7 @@ MonoBehaviour:
     - position: {x: -1, y: 50, z: -1}
       index: 102
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1484,7 +1485,7 @@ MonoBehaviour:
     - position: {x: -1, y: 50, z: 0}
       index: 332
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1498,7 +1499,7 @@ MonoBehaviour:
     - position: {x: -1, y: 51, z: -1}
       index: 104
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1512,7 +1513,7 @@ MonoBehaviour:
     - position: {x: -1, y: 51, z: 0}
       index: 334
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1526,7 +1527,7 @@ MonoBehaviour:
     - position: {x: -1, y: 52, z: -1}
       index: 106
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1540,7 +1541,7 @@ MonoBehaviour:
     - position: {x: -1, y: 52, z: 0}
       index: 336
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1554,7 +1555,7 @@ MonoBehaviour:
     - position: {x: -1, y: 53, z: -1}
       index: 108
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1568,7 +1569,7 @@ MonoBehaviour:
     - position: {x: -1, y: 53, z: 0}
       index: 338
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1582,7 +1583,7 @@ MonoBehaviour:
     - position: {x: -1, y: 54, z: -1}
       index: 110
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1596,7 +1597,7 @@ MonoBehaviour:
     - position: {x: -1, y: 54, z: 0}
       index: 340
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1610,7 +1611,7 @@ MonoBehaviour:
     - position: {x: -1, y: 55, z: -1}
       index: 112
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1624,7 +1625,7 @@ MonoBehaviour:
     - position: {x: -1, y: 55, z: 0}
       index: 342
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1638,7 +1639,7 @@ MonoBehaviour:
     - position: {x: -1, y: 56, z: -1}
       index: 114
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1652,7 +1653,7 @@ MonoBehaviour:
     - position: {x: -1, y: 56, z: 0}
       index: 344
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1666,7 +1667,7 @@ MonoBehaviour:
     - position: {x: -1, y: 57, z: -1}
       index: 116
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1680,7 +1681,7 @@ MonoBehaviour:
     - position: {x: -1, y: 57, z: 0}
       index: 346
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1694,7 +1695,7 @@ MonoBehaviour:
     - position: {x: -1, y: 58, z: -1}
       index: 118
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1708,7 +1709,7 @@ MonoBehaviour:
     - position: {x: -1, y: 58, z: 0}
       index: 348
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1722,7 +1723,7 @@ MonoBehaviour:
     - position: {x: -1, y: 59, z: -1}
       index: 120
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1736,7 +1737,7 @@ MonoBehaviour:
     - position: {x: -1, y: 59, z: 0}
       index: 350
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1750,7 +1751,7 @@ MonoBehaviour:
     - position: {x: -1, y: 60, z: -1}
       index: 122
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1764,7 +1765,7 @@ MonoBehaviour:
     - position: {x: -1, y: 60, z: 0}
       index: 352
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1778,7 +1779,7 @@ MonoBehaviour:
     - position: {x: -1, y: 61, z: -1}
       index: 124
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1792,7 +1793,7 @@ MonoBehaviour:
     - position: {x: -1, y: 61, z: 0}
       index: 354
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1806,7 +1807,7 @@ MonoBehaviour:
     - position: {x: -1, y: 62, z: -1}
       index: 126
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1820,7 +1821,7 @@ MonoBehaviour:
     - position: {x: -1, y: 62, z: 0}
       index: 356
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1834,7 +1835,7 @@ MonoBehaviour:
     - position: {x: -1, y: 63, z: -1}
       index: 128
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1848,7 +1849,7 @@ MonoBehaviour:
     - position: {x: -1, y: 63, z: 0}
       index: 358
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1862,7 +1863,7 @@ MonoBehaviour:
     - position: {x: -1, y: 64, z: -1}
       index: 130
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1876,7 +1877,7 @@ MonoBehaviour:
     - position: {x: -1, y: 64, z: 0}
       index: 360
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1890,7 +1891,7 @@ MonoBehaviour:
     - position: {x: -1, y: 65, z: -1}
       index: 132
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1904,7 +1905,7 @@ MonoBehaviour:
     - position: {x: -1, y: 65, z: 0}
       index: 362
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1918,7 +1919,7 @@ MonoBehaviour:
     - position: {x: -1, y: 66, z: -1}
       index: 134
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1932,7 +1933,7 @@ MonoBehaviour:
     - position: {x: -1, y: 66, z: 0}
       index: 364
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1946,7 +1947,7 @@ MonoBehaviour:
     - position: {x: -1, y: 67, z: -1}
       index: 136
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1960,7 +1961,7 @@ MonoBehaviour:
     - position: {x: -1, y: 67, z: 0}
       index: 366
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1974,7 +1975,7 @@ MonoBehaviour:
     - position: {x: -1, y: 68, z: -1}
       index: 138
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -1988,7 +1989,7 @@ MonoBehaviour:
     - position: {x: -1, y: 68, z: 0}
       index: 368
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2002,7 +2003,7 @@ MonoBehaviour:
     - position: {x: -1, y: 69, z: -1}
       index: 140
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2016,7 +2017,7 @@ MonoBehaviour:
     - position: {x: -1, y: 69, z: 0}
       index: 370
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2030,7 +2031,7 @@ MonoBehaviour:
     - position: {x: -1, y: 70, z: -1}
       index: 142
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2044,7 +2045,7 @@ MonoBehaviour:
     - position: {x: -1, y: 70, z: 0}
       index: 372
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2058,7 +2059,7 @@ MonoBehaviour:
     - position: {x: -1, y: 71, z: -1}
       index: 144
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2072,7 +2073,7 @@ MonoBehaviour:
     - position: {x: -1, y: 71, z: 0}
       index: 374
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2086,7 +2087,7 @@ MonoBehaviour:
     - position: {x: -1, y: 72, z: -1}
       index: 146
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2100,7 +2101,7 @@ MonoBehaviour:
     - position: {x: -1, y: 72, z: 0}
       index: 376
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2114,7 +2115,7 @@ MonoBehaviour:
     - position: {x: -1, y: 73, z: -1}
       index: 148
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2128,7 +2129,7 @@ MonoBehaviour:
     - position: {x: -1, y: 73, z: 0}
       index: 378
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2142,7 +2143,7 @@ MonoBehaviour:
     - position: {x: -1, y: 74, z: -1}
       index: 150
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2156,7 +2157,7 @@ MonoBehaviour:
     - position: {x: -1, y: 74, z: 0}
       index: 380
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2170,7 +2171,7 @@ MonoBehaviour:
     - position: {x: -1, y: 75, z: -1}
       index: 152
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2184,7 +2185,7 @@ MonoBehaviour:
     - position: {x: -1, y: 75, z: 0}
       index: 382
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2198,7 +2199,7 @@ MonoBehaviour:
     - position: {x: -1, y: 76, z: -1}
       index: 154
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2212,7 +2213,7 @@ MonoBehaviour:
     - position: {x: -1, y: 76, z: 0}
       index: 384
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2226,7 +2227,7 @@ MonoBehaviour:
     - position: {x: -1, y: 77, z: -1}
       index: 156
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2240,7 +2241,7 @@ MonoBehaviour:
     - position: {x: -1, y: 77, z: 0}
       index: 386
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2254,7 +2255,7 @@ MonoBehaviour:
     - position: {x: -1, y: 78, z: -1}
       index: 158
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2268,7 +2269,7 @@ MonoBehaviour:
     - position: {x: -1, y: 78, z: 0}
       index: 388
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2282,7 +2283,7 @@ MonoBehaviour:
     - position: {x: -1, y: 79, z: -1}
       index: 160
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2296,7 +2297,7 @@ MonoBehaviour:
     - position: {x: -1, y: 79, z: 0}
       index: 390
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2310,7 +2311,7 @@ MonoBehaviour:
     - position: {x: -1, y: 80, z: -1}
       index: 162
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2324,7 +2325,7 @@ MonoBehaviour:
     - position: {x: -1, y: 80, z: 0}
       index: 392
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2338,7 +2339,7 @@ MonoBehaviour:
     - position: {x: -1, y: 81, z: -1}
       index: 164
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2352,7 +2353,7 @@ MonoBehaviour:
     - position: {x: -1, y: 81, z: 0}
       index: 394
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2366,7 +2367,7 @@ MonoBehaviour:
     - position: {x: -1, y: 82, z: -1}
       index: 166
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2380,7 +2381,7 @@ MonoBehaviour:
     - position: {x: -1, y: 82, z: 0}
       index: 396
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2394,7 +2395,7 @@ MonoBehaviour:
     - position: {x: -1, y: 83, z: -1}
       index: 168
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2408,7 +2409,7 @@ MonoBehaviour:
     - position: {x: -1, y: 83, z: 0}
       index: 398
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2422,7 +2423,7 @@ MonoBehaviour:
     - position: {x: -1, y: 84, z: -1}
       index: 170
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2436,7 +2437,7 @@ MonoBehaviour:
     - position: {x: -1, y: 84, z: 0}
       index: 400
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2450,7 +2451,7 @@ MonoBehaviour:
     - position: {x: -1, y: 85, z: -1}
       index: 172
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2464,7 +2465,7 @@ MonoBehaviour:
     - position: {x: -1, y: 85, z: 0}
       index: 402
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2478,7 +2479,7 @@ MonoBehaviour:
     - position: {x: -1, y: 86, z: -1}
       index: 174
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2492,7 +2493,7 @@ MonoBehaviour:
     - position: {x: -1, y: 86, z: 0}
       index: 404
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2506,7 +2507,7 @@ MonoBehaviour:
     - position: {x: -1, y: 87, z: -1}
       index: 176
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2520,7 +2521,7 @@ MonoBehaviour:
     - position: {x: -1, y: 87, z: 0}
       index: 406
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2534,7 +2535,7 @@ MonoBehaviour:
     - position: {x: -1, y: 88, z: -1}
       index: 178
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2548,7 +2549,7 @@ MonoBehaviour:
     - position: {x: -1, y: 88, z: 0}
       index: 408
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2562,7 +2563,7 @@ MonoBehaviour:
     - position: {x: -1, y: 89, z: -1}
       index: 180
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2576,7 +2577,7 @@ MonoBehaviour:
     - position: {x: -1, y: 89, z: 0}
       index: 410
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2590,7 +2591,7 @@ MonoBehaviour:
     - position: {x: -1, y: 90, z: -1}
       index: 182
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2604,7 +2605,7 @@ MonoBehaviour:
     - position: {x: -1, y: 90, z: 0}
       index: 412
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2618,7 +2619,7 @@ MonoBehaviour:
     - position: {x: -1, y: 91, z: -1}
       index: 184
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2632,7 +2633,7 @@ MonoBehaviour:
     - position: {x: -1, y: 91, z: 0}
       index: 414
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2646,7 +2647,7 @@ MonoBehaviour:
     - position: {x: -1, y: 92, z: -1}
       index: 186
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2660,7 +2661,7 @@ MonoBehaviour:
     - position: {x: -1, y: 92, z: 0}
       index: 416
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2674,7 +2675,7 @@ MonoBehaviour:
     - position: {x: -1, y: 93, z: -1}
       index: 188
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2688,7 +2689,7 @@ MonoBehaviour:
     - position: {x: -1, y: 93, z: 0}
       index: 418
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2702,7 +2703,7 @@ MonoBehaviour:
     - position: {x: -1, y: 94, z: -1}
       index: 190
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2716,7 +2717,7 @@ MonoBehaviour:
     - position: {x: -1, y: 94, z: 0}
       index: 420
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2730,7 +2731,7 @@ MonoBehaviour:
     - position: {x: -1, y: 95, z: -1}
       index: 192
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2744,7 +2745,7 @@ MonoBehaviour:
     - position: {x: -1, y: 95, z: 0}
       index: 422
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2758,7 +2759,7 @@ MonoBehaviour:
     - position: {x: -1, y: 96, z: -1}
       index: 194
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2772,7 +2773,7 @@ MonoBehaviour:
     - position: {x: -1, y: 96, z: 0}
       index: 424
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2786,7 +2787,7 @@ MonoBehaviour:
     - position: {x: -1, y: 97, z: -1}
       index: 196
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2800,7 +2801,7 @@ MonoBehaviour:
     - position: {x: -1, y: 97, z: 0}
       index: 426
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2814,7 +2815,7 @@ MonoBehaviour:
     - position: {x: -1, y: 98, z: -1}
       index: 198
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2828,7 +2829,7 @@ MonoBehaviour:
     - position: {x: -1, y: 98, z: 0}
       index: 428
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2842,7 +2843,7 @@ MonoBehaviour:
     - position: {x: -1, y: 99, z: -1}
       index: 200
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2856,7 +2857,7 @@ MonoBehaviour:
     - position: {x: -1, y: 99, z: 0}
       index: 430
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2870,7 +2871,7 @@ MonoBehaviour:
     - position: {x: -1, y: 100, z: -1}
       index: 202
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2884,7 +2885,7 @@ MonoBehaviour:
     - position: {x: -1, y: 100, z: 0}
       index: 432
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2898,7 +2899,7 @@ MonoBehaviour:
     - position: {x: -1, y: 101, z: -1}
       index: 204
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2912,7 +2913,7 @@ MonoBehaviour:
     - position: {x: -1, y: 101, z: 0}
       index: 434
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2926,7 +2927,7 @@ MonoBehaviour:
     - position: {x: -1, y: 102, z: -1}
       index: 206
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2940,7 +2941,7 @@ MonoBehaviour:
     - position: {x: -1, y: 102, z: 0}
       index: 436
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2954,7 +2955,7 @@ MonoBehaviour:
     - position: {x: -1, y: 103, z: -1}
       index: 208
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2968,7 +2969,7 @@ MonoBehaviour:
     - position: {x: -1, y: 103, z: 0}
       index: 438
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2982,7 +2983,7 @@ MonoBehaviour:
     - position: {x: -1, y: 104, z: -1}
       index: 210
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -2996,7 +2997,7 @@ MonoBehaviour:
     - position: {x: -1, y: 104, z: 0}
       index: 440
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3010,7 +3011,7 @@ MonoBehaviour:
     - position: {x: -1, y: 105, z: -1}
       index: 212
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3024,7 +3025,7 @@ MonoBehaviour:
     - position: {x: -1, y: 105, z: 0}
       index: 442
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3038,7 +3039,7 @@ MonoBehaviour:
     - position: {x: -1, y: 106, z: -1}
       index: 214
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3052,7 +3053,7 @@ MonoBehaviour:
     - position: {x: -1, y: 106, z: 0}
       index: 444
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3066,7 +3067,7 @@ MonoBehaviour:
     - position: {x: -1, y: 107, z: -1}
       index: 216
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3080,7 +3081,7 @@ MonoBehaviour:
     - position: {x: -1, y: 107, z: 0}
       index: 446
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3094,7 +3095,7 @@ MonoBehaviour:
     - position: {x: -1, y: 108, z: -1}
       index: 218
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3108,7 +3109,7 @@ MonoBehaviour:
     - position: {x: -1, y: 108, z: 0}
       index: 448
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3122,7 +3123,7 @@ MonoBehaviour:
     - position: {x: -1, y: 109, z: -1}
       index: 220
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3136,7 +3137,7 @@ MonoBehaviour:
     - position: {x: -1, y: 109, z: 0}
       index: 450
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3150,7 +3151,7 @@ MonoBehaviour:
     - position: {x: -1, y: 110, z: -1}
       index: 222
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3164,7 +3165,7 @@ MonoBehaviour:
     - position: {x: -1, y: 110, z: 0}
       index: 452
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3178,7 +3179,7 @@ MonoBehaviour:
     - position: {x: -1, y: 111, z: -1}
       index: 224
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3192,7 +3193,7 @@ MonoBehaviour:
     - position: {x: -1, y: 111, z: 0}
       index: 454
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3206,7 +3207,7 @@ MonoBehaviour:
     - position: {x: -1, y: 112, z: -1}
       index: 226
       probeCount: 64
-      minSubdiv: 0
+      minSubdiv: 3
       indexChunkCount: 1
       shChunkCount: 1
       bricksCount: 1
@@ -3219,14 +3220,14 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: -1, y: 112, z: 0}
       index: 456
-      probeCount: 1280
-      minSubdiv: 0
-      indexChunkCount: 91
+      probeCount: 64
+      minSubdiv: 3
+      indexChunkCount: 1
       shChunkCount: 1
-      bricksCount: 20
+      bricksCount: 1
       indirectionEntryInfo:
       - positionInBricks: {x: -27, y: 3024, z: 0}
-        minSubdiv: 0
+        minSubdiv: 3
         minBrickPos: {x: 0, y: 0, z: 0}
         maxBrickPosPlusOne: {x: 28, y: 28, z: 28}
         hasMinMax: 1
@@ -3244,11 +3245,15 @@ MonoBehaviour:
       - offset: 0
         elementCount: 1
       - offset: 8192
-        elementCount: 2
+        elementCount: 1
+      - offset: 16384
+        elementCount: 1
       - offset: 24576
         elementCount: 1
       - offset: 32768
-        elementCount: 2
+        elementCount: 1
+      - offset: 40960
+        elementCount: 1
       - offset: 49152
         elementCount: 1
       - offset: 57344
@@ -3693,16 +3698,12 @@ MonoBehaviour:
         elementCount: 1
       - offset: 1859584
         elementCount: 1
-      - offset: 1867776
-        elementCount: 1
-      - offset: 1875968
-        elementCount: 1
     m_Asset: {fileID: 4900000, guid: 98f8c11cb16766442a9c5ab527853ee1, type: 3}
   scenarios:
     m_Keys:
     - Default
     m_Values:
-    - sceneHash: -1532939942
+    - sceneHash: 1082733439
       cellDataAsset:
         m_AssetGUID: 382877e7e8f172440a316c40ca30ecb5
         m_StreamableAssetPath: APVStreamingAssets\4393e4abdd2123e4fb9dfeb490373379\382877e7e8f172440a316c40ca30ecb5.bytes
@@ -3713,11 +3714,15 @@ MonoBehaviour:
           - offset: 0
             elementCount: 1
           - offset: 131072
-            elementCount: 2
+            elementCount: 1
+          - offset: 262144
+            elementCount: 1
           - offset: 393216
             elementCount: 1
           - offset: 524288
-            elementCount: 2
+            elementCount: 1
+          - offset: 655360
+            elementCount: 1
           - offset: 786432
             elementCount: 1
           - offset: 917504
@@ -4161,10 +4166,6 @@ MonoBehaviour:
           - offset: 29622272
             elementCount: 1
           - offset: 29753344
-            elementCount: 1
-          - offset: 29884416
-            elementCount: 1
-          - offset: 30015488
             elementCount: 1
         m_Asset: {fileID: 4900000, guid: 382877e7e8f172440a316c40ca30ecb5, type: 3}
       cellOptionalDataAsset:
@@ -4177,11 +4178,15 @@ MonoBehaviour:
           - offset: 0
             elementCount: 1
           - offset: 131072
-            elementCount: 2
+            elementCount: 1
+          - offset: 262144
+            elementCount: 1
           - offset: 393216
             elementCount: 1
           - offset: 524288
-            elementCount: 2
+            elementCount: 1
+          - offset: 655360
+            elementCount: 1
           - offset: 786432
             elementCount: 1
           - offset: 917504
@@ -4626,10 +4631,6 @@ MonoBehaviour:
             elementCount: 1
           - offset: 29753344
             elementCount: 1
-          - offset: 29884416
-            elementCount: 1
-          - offset: 30015488
-            elementCount: 1
         m_Asset: {fileID: 4900000, guid: d58c71b81f0b75047bae1899ed564990, type: 3}
       cellProbeOcclusionDataAsset:
         m_AssetGUID: 5967512b1c54ecf4ea35dd0081f88717
@@ -4641,11 +4642,15 @@ MonoBehaviour:
           - offset: 0
             elementCount: 1
           - offset: 32768
-            elementCount: 2
+            elementCount: 1
+          - offset: 65536
+            elementCount: 1
           - offset: 98304
             elementCount: 1
           - offset: 131072
-            elementCount: 2
+            elementCount: 1
+          - offset: 163840
+            elementCount: 1
           - offset: 196608
             elementCount: 1
           - offset: 229376
@@ -5090,10 +5095,6 @@ MonoBehaviour:
             elementCount: 1
           - offset: 7438336
             elementCount: 1
-          - offset: 7471104
-            elementCount: 1
-          - offset: 7503872
-            elementCount: 1
         m_Asset: {fileID: 4900000, guid: 5967512b1c54ecf4ea35dd0081f88717, type: 3}
   cellBricksDataAsset:
     m_AssetGUID: 6ce5896a90001ee4d83096aa58c0a83d
@@ -5105,459 +5106,459 @@ MonoBehaviour:
       - offset: 0
         elementCount: 1
       - offset: 16
-        elementCount: 182
+        elementCount: 1
+      - offset: 32
+        elementCount: 1
+      - offset: 48
+        elementCount: 1
+      - offset: 64
+        elementCount: 1
+      - offset: 80
+        elementCount: 1
+      - offset: 96
+        elementCount: 1
+      - offset: 112
+        elementCount: 1
+      - offset: 128
+        elementCount: 1
+      - offset: 144
+        elementCount: 1
+      - offset: 160
+        elementCount: 1
+      - offset: 176
+        elementCount: 1
+      - offset: 192
+        elementCount: 1
+      - offset: 208
+        elementCount: 1
+      - offset: 224
+        elementCount: 1
+      - offset: 240
+        elementCount: 1
+      - offset: 256
+        elementCount: 1
+      - offset: 272
+        elementCount: 1
+      - offset: 288
+        elementCount: 1
+      - offset: 304
+        elementCount: 1
+      - offset: 320
+        elementCount: 1
+      - offset: 336
+        elementCount: 1
+      - offset: 352
+        elementCount: 1
+      - offset: 368
+        elementCount: 1
+      - offset: 384
+        elementCount: 1
+      - offset: 400
+        elementCount: 1
+      - offset: 416
+        elementCount: 1
+      - offset: 432
+        elementCount: 1
+      - offset: 448
+        elementCount: 1
+      - offset: 464
+        elementCount: 1
+      - offset: 480
+        elementCount: 1
+      - offset: 496
+        elementCount: 1
+      - offset: 512
+        elementCount: 1
+      - offset: 528
+        elementCount: 1
+      - offset: 544
+        elementCount: 1
+      - offset: 560
+        elementCount: 1
+      - offset: 576
+        elementCount: 1
+      - offset: 592
+        elementCount: 1
+      - offset: 608
+        elementCount: 1
+      - offset: 624
+        elementCount: 1
+      - offset: 640
+        elementCount: 1
+      - offset: 656
+        elementCount: 1
+      - offset: 672
+        elementCount: 1
+      - offset: 688
+        elementCount: 1
+      - offset: 704
+        elementCount: 1
+      - offset: 720
+        elementCount: 1
+      - offset: 736
+        elementCount: 1
+      - offset: 752
+        elementCount: 1
+      - offset: 768
+        elementCount: 1
+      - offset: 784
+        elementCount: 1
+      - offset: 800
+        elementCount: 1
+      - offset: 816
+        elementCount: 1
+      - offset: 832
+        elementCount: 1
+      - offset: 848
+        elementCount: 1
+      - offset: 864
+        elementCount: 1
+      - offset: 880
+        elementCount: 1
+      - offset: 896
+        elementCount: 1
+      - offset: 912
+        elementCount: 1
+      - offset: 928
+        elementCount: 1
+      - offset: 944
+        elementCount: 1
+      - offset: 960
+        elementCount: 1
+      - offset: 976
+        elementCount: 1
+      - offset: 992
+        elementCount: 1
+      - offset: 1008
+        elementCount: 1
+      - offset: 1024
+        elementCount: 1
+      - offset: 1040
+        elementCount: 1
+      - offset: 1056
+        elementCount: 1
+      - offset: 1072
+        elementCount: 1
+      - offset: 1088
+        elementCount: 1
+      - offset: 1104
+        elementCount: 1
+      - offset: 1120
+        elementCount: 1
+      - offset: 1136
+        elementCount: 1
+      - offset: 1152
+        elementCount: 1
+      - offset: 1168
+        elementCount: 1
+      - offset: 1184
+        elementCount: 1
+      - offset: 1200
+        elementCount: 1
+      - offset: 1216
+        elementCount: 1
+      - offset: 1232
+        elementCount: 1
+      - offset: 1248
+        elementCount: 1
+      - offset: 1264
+        elementCount: 1
+      - offset: 1280
+        elementCount: 1
+      - offset: 1296
+        elementCount: 1
+      - offset: 1312
+        elementCount: 1
+      - offset: 1328
+        elementCount: 1
+      - offset: 1344
+        elementCount: 1
+      - offset: 1360
+        elementCount: 1
+      - offset: 1376
+        elementCount: 1
+      - offset: 1392
+        elementCount: 1
+      - offset: 1408
+        elementCount: 1
+      - offset: 1424
+        elementCount: 1
+      - offset: 1440
+        elementCount: 1
+      - offset: 1456
+        elementCount: 1
+      - offset: 1472
+        elementCount: 1
+      - offset: 1488
+        elementCount: 1
+      - offset: 1504
+        elementCount: 1
+      - offset: 1520
+        elementCount: 1
+      - offset: 1536
+        elementCount: 1
+      - offset: 1552
+        elementCount: 1
+      - offset: 1568
+        elementCount: 1
+      - offset: 1584
+        elementCount: 1
+      - offset: 1600
+        elementCount: 1
+      - offset: 1616
+        elementCount: 1
+      - offset: 1632
+        elementCount: 1
+      - offset: 1648
+        elementCount: 1
+      - offset: 1664
+        elementCount: 1
+      - offset: 1680
+        elementCount: 1
+      - offset: 1696
+        elementCount: 1
+      - offset: 1712
+        elementCount: 1
+      - offset: 1728
+        elementCount: 1
+      - offset: 1744
+        elementCount: 1
+      - offset: 1760
+        elementCount: 1
+      - offset: 1776
+        elementCount: 1
+      - offset: 1792
+        elementCount: 1
+      - offset: 1808
+        elementCount: 1
+      - offset: 1824
+        elementCount: 1
+      - offset: 1840
+        elementCount: 1
+      - offset: 1856
+        elementCount: 1
+      - offset: 1872
+        elementCount: 1
+      - offset: 1888
+        elementCount: 1
+      - offset: 1904
+        elementCount: 1
+      - offset: 1920
+        elementCount: 1
+      - offset: 1936
+        elementCount: 1
+      - offset: 1952
+        elementCount: 1
+      - offset: 1968
+        elementCount: 1
+      - offset: 1984
+        elementCount: 1
+      - offset: 2000
+        elementCount: 1
+      - offset: 2016
+        elementCount: 1
+      - offset: 2032
+        elementCount: 1
+      - offset: 2048
+        elementCount: 1
+      - offset: 2064
+        elementCount: 1
+      - offset: 2080
+        elementCount: 1
+      - offset: 2096
+        elementCount: 1
+      - offset: 2112
+        elementCount: 1
+      - offset: 2128
+        elementCount: 1
+      - offset: 2144
+        elementCount: 1
+      - offset: 2160
+        elementCount: 1
+      - offset: 2176
+        elementCount: 1
+      - offset: 2192
+        elementCount: 1
+      - offset: 2208
+        elementCount: 1
+      - offset: 2224
+        elementCount: 1
+      - offset: 2240
+        elementCount: 1
+      - offset: 2256
+        elementCount: 1
+      - offset: 2272
+        elementCount: 1
+      - offset: 2288
+        elementCount: 1
+      - offset: 2304
+        elementCount: 1
+      - offset: 2320
+        elementCount: 1
+      - offset: 2336
+        elementCount: 1
+      - offset: 2352
+        elementCount: 1
+      - offset: 2368
+        elementCount: 1
+      - offset: 2384
+        elementCount: 1
+      - offset: 2400
+        elementCount: 1
+      - offset: 2416
+        elementCount: 1
+      - offset: 2432
+        elementCount: 1
+      - offset: 2448
+        elementCount: 1
+      - offset: 2464
+        elementCount: 1
+      - offset: 2480
+        elementCount: 1
+      - offset: 2496
+        elementCount: 1
+      - offset: 2512
+        elementCount: 1
+      - offset: 2528
+        elementCount: 1
+      - offset: 2544
+        elementCount: 1
+      - offset: 2560
+        elementCount: 1
+      - offset: 2576
+        elementCount: 1
+      - offset: 2592
+        elementCount: 1
+      - offset: 2608
+        elementCount: 1
+      - offset: 2624
+        elementCount: 1
+      - offset: 2640
+        elementCount: 1
+      - offset: 2656
+        elementCount: 1
+      - offset: 2672
+        elementCount: 1
+      - offset: 2688
+        elementCount: 1
+      - offset: 2704
+        elementCount: 1
+      - offset: 2720
+        elementCount: 1
+      - offset: 2736
+        elementCount: 1
+      - offset: 2752
+        elementCount: 1
+      - offset: 2768
+        elementCount: 1
+      - offset: 2784
+        elementCount: 1
+      - offset: 2800
+        elementCount: 1
+      - offset: 2816
+        elementCount: 1
+      - offset: 2832
+        elementCount: 1
+      - offset: 2848
+        elementCount: 1
+      - offset: 2864
+        elementCount: 1
+      - offset: 2880
+        elementCount: 1
+      - offset: 2896
+        elementCount: 1
+      - offset: 2912
+        elementCount: 1
       - offset: 2928
         elementCount: 1
       - offset: 2944
-        elementCount: 139
-      - offset: 5168
         elementCount: 1
-      - offset: 5184
+      - offset: 2960
         elementCount: 1
-      - offset: 5200
+      - offset: 2976
         elementCount: 1
-      - offset: 5216
+      - offset: 2992
         elementCount: 1
-      - offset: 5232
+      - offset: 3008
         elementCount: 1
-      - offset: 5248
+      - offset: 3024
         elementCount: 1
-      - offset: 5264
+      - offset: 3040
         elementCount: 1
-      - offset: 5280
+      - offset: 3056
         elementCount: 1
-      - offset: 5296
+      - offset: 3072
         elementCount: 1
-      - offset: 5312
+      - offset: 3088
         elementCount: 1
-      - offset: 5328
+      - offset: 3104
         elementCount: 1
-      - offset: 5344
+      - offset: 3120
         elementCount: 1
-      - offset: 5360
+      - offset: 3136
         elementCount: 1
-      - offset: 5376
+      - offset: 3152
         elementCount: 1
-      - offset: 5392
+      - offset: 3168
         elementCount: 1
-      - offset: 5408
+      - offset: 3184
         elementCount: 1
-      - offset: 5424
+      - offset: 3200
         elementCount: 1
-      - offset: 5440
+      - offset: 3216
         elementCount: 1
-      - offset: 5456
+      - offset: 3232
         elementCount: 1
-      - offset: 5472
+      - offset: 3248
         elementCount: 1
-      - offset: 5488
+      - offset: 3264
         elementCount: 1
-      - offset: 5504
+      - offset: 3280
         elementCount: 1
-      - offset: 5520
+      - offset: 3296
         elementCount: 1
-      - offset: 5536
+      - offset: 3312
         elementCount: 1
-      - offset: 5552
+      - offset: 3328
         elementCount: 1
-      - offset: 5568
+      - offset: 3344
         elementCount: 1
-      - offset: 5584
+      - offset: 3360
         elementCount: 1
-      - offset: 5600
+      - offset: 3376
         elementCount: 1
-      - offset: 5616
+      - offset: 3392
         elementCount: 1
-      - offset: 5632
+      - offset: 3408
         elementCount: 1
-      - offset: 5648
+      - offset: 3424
         elementCount: 1
-      - offset: 5664
+      - offset: 3440
         elementCount: 1
-      - offset: 5680
+      - offset: 3456
         elementCount: 1
-      - offset: 5696
+      - offset: 3472
         elementCount: 1
-      - offset: 5712
+      - offset: 3488
         elementCount: 1
-      - offset: 5728
+      - offset: 3504
         elementCount: 1
-      - offset: 5744
+      - offset: 3520
         elementCount: 1
-      - offset: 5760
+      - offset: 3536
         elementCount: 1
-      - offset: 5776
+      - offset: 3552
         elementCount: 1
-      - offset: 5792
+      - offset: 3568
         elementCount: 1
-      - offset: 5808
+      - offset: 3584
         elementCount: 1
-      - offset: 5824
+      - offset: 3600
         elementCount: 1
-      - offset: 5840
+      - offset: 3616
         elementCount: 1
-      - offset: 5856
+      - offset: 3632
         elementCount: 1
-      - offset: 5872
-        elementCount: 1
-      - offset: 5888
-        elementCount: 1
-      - offset: 5904
-        elementCount: 1
-      - offset: 5920
-        elementCount: 1
-      - offset: 5936
-        elementCount: 1
-      - offset: 5952
-        elementCount: 1
-      - offset: 5968
-        elementCount: 1
-      - offset: 5984
-        elementCount: 1
-      - offset: 6000
-        elementCount: 1
-      - offset: 6016
-        elementCount: 1
-      - offset: 6032
-        elementCount: 1
-      - offset: 6048
-        elementCount: 1
-      - offset: 6064
-        elementCount: 1
-      - offset: 6080
-        elementCount: 1
-      - offset: 6096
-        elementCount: 1
-      - offset: 6112
-        elementCount: 1
-      - offset: 6128
-        elementCount: 1
-      - offset: 6144
-        elementCount: 1
-      - offset: 6160
-        elementCount: 1
-      - offset: 6176
-        elementCount: 1
-      - offset: 6192
-        elementCount: 1
-      - offset: 6208
-        elementCount: 1
-      - offset: 6224
-        elementCount: 1
-      - offset: 6240
-        elementCount: 1
-      - offset: 6256
-        elementCount: 1
-      - offset: 6272
-        elementCount: 1
-      - offset: 6288
-        elementCount: 1
-      - offset: 6304
-        elementCount: 1
-      - offset: 6320
-        elementCount: 1
-      - offset: 6336
-        elementCount: 1
-      - offset: 6352
-        elementCount: 1
-      - offset: 6368
-        elementCount: 1
-      - offset: 6384
-        elementCount: 1
-      - offset: 6400
-        elementCount: 1
-      - offset: 6416
-        elementCount: 1
-      - offset: 6432
-        elementCount: 1
-      - offset: 6448
-        elementCount: 1
-      - offset: 6464
-        elementCount: 1
-      - offset: 6480
-        elementCount: 1
-      - offset: 6496
-        elementCount: 1
-      - offset: 6512
-        elementCount: 1
-      - offset: 6528
-        elementCount: 1
-      - offset: 6544
-        elementCount: 1
-      - offset: 6560
-        elementCount: 1
-      - offset: 6576
-        elementCount: 1
-      - offset: 6592
-        elementCount: 1
-      - offset: 6608
-        elementCount: 1
-      - offset: 6624
-        elementCount: 1
-      - offset: 6640
-        elementCount: 1
-      - offset: 6656
-        elementCount: 1
-      - offset: 6672
-        elementCount: 1
-      - offset: 6688
-        elementCount: 1
-      - offset: 6704
-        elementCount: 1
-      - offset: 6720
-        elementCount: 1
-      - offset: 6736
-        elementCount: 1
-      - offset: 6752
-        elementCount: 1
-      - offset: 6768
-        elementCount: 1
-      - offset: 6784
-        elementCount: 1
-      - offset: 6800
-        elementCount: 1
-      - offset: 6816
-        elementCount: 1
-      - offset: 6832
-        elementCount: 1
-      - offset: 6848
-        elementCount: 1
-      - offset: 6864
-        elementCount: 1
-      - offset: 6880
-        elementCount: 1
-      - offset: 6896
-        elementCount: 1
-      - offset: 6912
-        elementCount: 1
-      - offset: 6928
-        elementCount: 1
-      - offset: 6944
-        elementCount: 1
-      - offset: 6960
-        elementCount: 1
-      - offset: 6976
-        elementCount: 1
-      - offset: 6992
-        elementCount: 1
-      - offset: 7008
-        elementCount: 1
-      - offset: 7024
-        elementCount: 1
-      - offset: 7040
-        elementCount: 1
-      - offset: 7056
-        elementCount: 1
-      - offset: 7072
-        elementCount: 1
-      - offset: 7088
-        elementCount: 1
-      - offset: 7104
-        elementCount: 1
-      - offset: 7120
-        elementCount: 1
-      - offset: 7136
-        elementCount: 1
-      - offset: 7152
-        elementCount: 1
-      - offset: 7168
-        elementCount: 1
-      - offset: 7184
-        elementCount: 1
-      - offset: 7200
-        elementCount: 1
-      - offset: 7216
-        elementCount: 1
-      - offset: 7232
-        elementCount: 1
-      - offset: 7248
-        elementCount: 1
-      - offset: 7264
-        elementCount: 1
-      - offset: 7280
-        elementCount: 1
-      - offset: 7296
-        elementCount: 1
-      - offset: 7312
-        elementCount: 1
-      - offset: 7328
-        elementCount: 1
-      - offset: 7344
-        elementCount: 1
-      - offset: 7360
-        elementCount: 1
-      - offset: 7376
-        elementCount: 1
-      - offset: 7392
-        elementCount: 1
-      - offset: 7408
-        elementCount: 1
-      - offset: 7424
-        elementCount: 1
-      - offset: 7440
-        elementCount: 1
-      - offset: 7456
-        elementCount: 1
-      - offset: 7472
-        elementCount: 1
-      - offset: 7488
-        elementCount: 1
-      - offset: 7504
-        elementCount: 1
-      - offset: 7520
-        elementCount: 1
-      - offset: 7536
-        elementCount: 1
-      - offset: 7552
-        elementCount: 1
-      - offset: 7568
-        elementCount: 1
-      - offset: 7584
-        elementCount: 1
-      - offset: 7600
-        elementCount: 1
-      - offset: 7616
-        elementCount: 1
-      - offset: 7632
-        elementCount: 1
-      - offset: 7648
-        elementCount: 1
-      - offset: 7664
-        elementCount: 1
-      - offset: 7680
-        elementCount: 1
-      - offset: 7696
-        elementCount: 1
-      - offset: 7712
-        elementCount: 1
-      - offset: 7728
-        elementCount: 1
-      - offset: 7744
-        elementCount: 1
-      - offset: 7760
-        elementCount: 1
-      - offset: 7776
-        elementCount: 1
-      - offset: 7792
-        elementCount: 1
-      - offset: 7808
-        elementCount: 1
-      - offset: 7824
-        elementCount: 1
-      - offset: 7840
-        elementCount: 1
-      - offset: 7856
-        elementCount: 1
-      - offset: 7872
-        elementCount: 1
-      - offset: 7888
-        elementCount: 1
-      - offset: 7904
-        elementCount: 1
-      - offset: 7920
-        elementCount: 1
-      - offset: 7936
-        elementCount: 1
-      - offset: 7952
-        elementCount: 1
-      - offset: 7968
-        elementCount: 1
-      - offset: 7984
-        elementCount: 1
-      - offset: 8000
-        elementCount: 1
-      - offset: 8016
-        elementCount: 1
-      - offset: 8032
-        elementCount: 1
-      - offset: 8048
-        elementCount: 1
-      - offset: 8064
-        elementCount: 1
-      - offset: 8080
-        elementCount: 1
-      - offset: 8096
-        elementCount: 1
-      - offset: 8112
-        elementCount: 1
-      - offset: 8128
-        elementCount: 1
-      - offset: 8144
-        elementCount: 1
-      - offset: 8160
-        elementCount: 1
-      - offset: 8176
-        elementCount: 1
-      - offset: 8192
-        elementCount: 1
-      - offset: 8208
-        elementCount: 1
-      - offset: 8224
-        elementCount: 1
-      - offset: 8240
-        elementCount: 1
-      - offset: 8256
-        elementCount: 1
-      - offset: 8272
-        elementCount: 1
-      - offset: 8288
-        elementCount: 1
-      - offset: 8304
-        elementCount: 1
-      - offset: 8320
-        elementCount: 1
-      - offset: 8336
-        elementCount: 1
-      - offset: 8352
-        elementCount: 1
-      - offset: 8368
-        elementCount: 1
-      - offset: 8384
-        elementCount: 1
-      - offset: 8400
-        elementCount: 1
-      - offset: 8416
-        elementCount: 1
-      - offset: 8432
-        elementCount: 1
-      - offset: 8448
-        elementCount: 1
-      - offset: 8464
-        elementCount: 1
-      - offset: 8480
-        elementCount: 1
-      - offset: 8496
-        elementCount: 1
-      - offset: 8512
-        elementCount: 1
-      - offset: 8528
-        elementCount: 1
-      - offset: 8544
-        elementCount: 1
-      - offset: 8560
-        elementCount: 1
-      - offset: 8576
-        elementCount: 1
-      - offset: 8592
-        elementCount: 1
-      - offset: 8608
-        elementCount: 1
-      - offset: 8624
-        elementCount: 1
-      - offset: 8640
-        elementCount: 1
-      - offset: 8656
-        elementCount: 1
-      - offset: 8672
-        elementCount: 1
-      - offset: 8688
-        elementCount: 1
-      - offset: 8704
-        elementCount: 1
-      - offset: 8720
-        elementCount: 1
-      - offset: 8736
-        elementCount: 20
     m_Asset: {fileID: 4900000, guid: 6ce5896a90001ee4d83096aa58c0a83d, type: 3}
   cellSupportDataAsset:
     m_AssetGUID: 624a373b0b90e6e419883ec690cfb9ec
@@ -5569,11 +5570,15 @@ MonoBehaviour:
       - offset: 0
         elementCount: 1
       - offset: 262144
-        elementCount: 2
+        elementCount: 1
+      - offset: 524288
+        elementCount: 1
       - offset: 786432
         elementCount: 1
       - offset: 1048576
-        elementCount: 2
+        elementCount: 1
+      - offset: 1310720
+        elementCount: 1
       - offset: 1572864
         elementCount: 1
       - offset: 1835008
@@ -6018,10 +6023,6 @@ MonoBehaviour:
         elementCount: 1
       - offset: 59506688
         elementCount: 1
-      - offset: 59768832
-        elementCount: 1
-      - offset: 60030976
-        elementCount: 1
     m_Asset: {fileID: 4900000, guid: 624a373b0b90e6e419883ec690cfb9ec, type: 3}
   chunkSizeInBricks: 128
   maxCellPosition: {x: 0, y: 113, z: 1}
@@ -6041,7 +6042,7 @@ MonoBehaviour:
     y: 0
     z: 0
     w: 0
-  maxSHChunkCount: 2
+  maxSHChunkCount: 1
   L0ChunkSize: 65536
   L1ChunkSize: 32768
   L2TextureChunkSize: 32768
@@ -6058,13 +6059,13 @@ MonoBehaviour:
   supportDataChunkSize: 262144
   lightingScenario: Default
   version: 2
-  freezePlacement: 0
+  freezePlacement: 1
   probeOffset: {x: 0, y: 0, z: 0}
   simplificationLevels: 3
   minDistanceBetweenProbes: 1
   renderersLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   minRendererVolumeSize: 0.1
   skyOcclusion: 0
   skyOcclusionBakingSamples: 2048
@@ -6072,7 +6073,7 @@ MonoBehaviour:
   skyOcclusionAverageAlbedo: 0.6
   skyOcclusionBackFaceCulling: 0
   skyOcclusionShadingDirection: 0
-  useRenderingLayers: 0
+  useRenderingLayers: 1
   renderingLayerMasks: []
   m_SceneBakeData:
     m_Keys:
