@@ -8,14 +8,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Lighting/New Lighting Settings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lighting/New Lighting Settings.lighting" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/Emittest1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Emittest1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Final lab parts4.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Final lab parts4.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.0.4/URP Package Samples/Shaders/Lit/Lit/LitLighting.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.0.4/URP Package Samples/Shaders/Lit/Lit/LitLighting.lighting" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellData.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellData.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellOptionalData.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellOptionalData.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellProbeOcclusionData.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellProbeOcclusionData.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellBricksData.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellBricksData.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSharedData.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSharedData.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSupportData.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSupportData.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellOptionalData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellOptionalData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellProbeOcclusionData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellProbeOcclusionData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellBricksData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellBricksData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSharedData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSharedData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSupportData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSupportData.bytes.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/LightingData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-0_comp_dir.png" afterDir="false" />
@@ -34,10 +39,17 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_dir.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_light.exr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DoorScripts/KeyCollectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DoorScripts/KeyCollectable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartCollectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartCollectable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Laser Beam Shader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Laser Beam Shader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/ButtonPressed.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/ButtonPressed.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/autobus-bold-font/Autobusbold-1ynL SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/autobus-bold-font/Autobusbold-1ynL SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +166,9 @@
       <workItem from="1760899557323" duration="3000" />
       <workItem from="1760899591645" duration="1000" />
       <workItem from="1760901430643" duration="6807000" />
-      <workItem from="1761161324201" duration="775000" />
+      <workItem from="1761161324201" duration="4099000" />
+      <workItem from="1761490874392" duration="583000" />
+      <workItem from="1761500806392" duration="615000" />
     </task>
     <servers />
   </component>
