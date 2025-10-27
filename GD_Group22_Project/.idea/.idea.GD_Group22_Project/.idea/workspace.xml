@@ -6,9 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lighting/New Lighting Settings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lighting/New Lighting Settings.lighting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Emittest1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Emittest1.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellOptionalData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellOptionalData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellProbeOcclusionData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set-Default.CellProbeOcclusionData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellBricksData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellBricksData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSharedData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSharedData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSupportData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.CellSupportData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/GrayBoxScene Baking Set.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/LightingData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/LightingData.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-0_comp_dir.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-0_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-0_comp_dir.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-0_comp_light.exr" afterDir="false" />
@@ -25,8 +39,17 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_dir.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_light.exr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/Lightmap-3_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/ReflectionProbe-0.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene/ReflectionProbe-0.exr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DoorScripts/KeyCollectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DoorScripts/KeyCollectable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartCollectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartCollectable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Laser Beam Shader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Laser Beam Shader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/ButtonPressed.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/ButtonPressed.mp3.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/autobus-bold-font/Autobusbold-1ynL SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/autobus-bold-font/Autobusbold-1ynL SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,30 +60,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ApparatusPickup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ApparatusSlotUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalInventory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalRecipe.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalScriptableObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalSlotUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/GravityGunChemicalPickup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPart.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartCollectable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartGlow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartsInventory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPickup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunWorkbench.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/New Folder/NT_PlayerInteract.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/New Folder/NT_interactObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PulseColor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinConditionManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinConditions/AreaTrigger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinConditions/RobustAreaTrigger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WinObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@63585d5be1b1/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.rendering.light-transport@9bd588f963c0/Runtime/UnifiedRayTracing/Common/GeometryPool/GeometryPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity3d-PhysicsGun/Unity3d-PhysicsGun/Assets/OutlineEffect/OutlineEffect.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -165,6 +166,9 @@
       <workItem from="1760899557323" duration="3000" />
       <workItem from="1760899591645" duration="1000" />
       <workItem from="1760901430643" duration="6807000" />
+      <workItem from="1761161324201" duration="4099000" />
+      <workItem from="1761490874392" duration="583000" />
+      <workItem from="1761500806392" duration="615000" />
     </task>
     <servers />
   </component>
