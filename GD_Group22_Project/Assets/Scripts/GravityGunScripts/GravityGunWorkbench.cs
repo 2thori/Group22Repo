@@ -34,11 +34,17 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
     [SerializeField] private string assemblingText = "Assembling...";
     [SerializeField] private string disassemblingText = "Disassembling...";
 
+    [Header("Sound Effects")] // Added sound effects header
+    [SerializeField] private AudioClip assemblingSound;
+    [SerializeField] private AudioClip successSound;
+    [SerializeField] private float soundVolume = 1f;
+
     private bool isGunAssembled = false;
     private bool isAnimating = false;
     private Vector3 targetPosition;
     private GameObject spawnedGun;
     private bool playerInRange = false;
+    private AudioSource audioSource; // Reference to AudioSource component
 
     // For interaction system
     public string InteractionText { get; private set; }
@@ -46,6 +52,9 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
     private void Start()
     {
         EnsureCollider();
+        
+        // Set up AudioSource component
+        SetupAudioSource();
         
         targetPosition = disassembledPosition;
         gravityGunPivot.localPosition = targetPosition;
@@ -78,6 +87,21 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
                 boxColl.size = new Vector3(5, 5, 5);
             }
         }
+    }
+    
+    private void SetupAudioSource()
+    {
+        // Try to get existing AudioSource, or add one if it doesn't exist
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        
+        // Configure AudioSource settings
+        audioSource.spatialBlend = 1f; // 3D sound
+        audioSource.volume = soundVolume;
+        audioSource.playOnAwake = false;
     }
     
     private void InitializeUI()
@@ -213,6 +237,9 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
 
         InteractionText = isGunAssembled ? disassemblingText : assemblingText;
 
+        // Play assembling sound effect
+        PlayAssemblingSound();
+
         isGunAssembled = !isGunAssembled;
         targetPosition = isGunAssembled ? assembledPosition : disassembledPosition;
         isAnimating = true;
@@ -263,6 +290,9 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
     {
         Debug.Log("Gravity gun has been assembled and is ready for use!");
         
+        // Play success sound effect
+        PlaySuccessSound();
+        
         if (gravityGunPrefab != null && gunSpawnPoint != null)
         {
             if (spawnedGun != null)
@@ -278,6 +308,20 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
         else
         {
             Debug.LogError("Gravity gun prefab or spawn point is not assigned in the inspector!");
+        }
+    }
+
+    private void OnGravityGunDisassembled()
+    {
+        Debug.Log("Gravity gun has been disassembled.");
+        
+        // Play success sound effect for disassembly too
+        PlaySuccessSound();
+        
+        if (spawnedGun != null)
+        {
+            Destroy(spawnedGun);
+            spawnedGun = null;
         }
     }
 
@@ -305,14 +349,29 @@ public class GravityGunWorkbench : MonoBehaviour, IInteractable
         }
     }
 
-    private void OnGravityGunDisassembled()
+    // Sound effect methods
+    private void PlayAssemblingSound()
     {
-        Debug.Log("Gravity gun has been disassembled.");
-        
-        if (spawnedGun != null)
+        if (assemblingSound != null && audioSource != null)
         {
-            Destroy(spawnedGun);
-            spawnedGun = null;
+            audioSource.PlayOneShot(assemblingSound, soundVolume);
+        }
+        else if (assemblingSound == null)
+        {
+            Debug.LogWarning("Assembling sound is not assigned!");
+        }
+    }
+
+    private void PlaySuccessSound()
+    {
+        if (successSound != null)
+        {
+            // Use PlayClipAtPoint for success sound to ensure it plays even if the workbench is disabled
+            AudioSource.PlayClipAtPoint(successSound, transform.position, soundVolume);
+        }
+        else if (successSound == null)
+        {
+            Debug.LogWarning("Success sound is not assigned!");
         }
     }
     
