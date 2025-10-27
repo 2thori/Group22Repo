@@ -4,6 +4,7 @@ public class GravityGunPartCollectable : MonoBehaviour, IInteractable
 {
     [SerializeField] private GravityGunPart part;
     [SerializeField] private GameObject collectEffect;
+    [SerializeField] private AudioClip collectAudio; // Added audio field
     
     // Public property to access the part
     public GravityGunPart Part => part;
@@ -25,6 +26,12 @@ public class GravityGunPartCollectable : MonoBehaviour, IInteractable
                 if (collectEffect != null)
                 {
                     Instantiate(collectEffect, transform.position, transform.rotation);
+                }
+                
+                // Play collection audio if assigned
+                if (collectAudio != null)
+                {
+                    AudioSource.PlayClipAtPoint(collectAudio, transform.position);
                 }
                 
                 // Disable the object instead of destroying it
