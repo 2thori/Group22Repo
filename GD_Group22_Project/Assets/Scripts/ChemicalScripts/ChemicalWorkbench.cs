@@ -55,8 +55,6 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         UpdateStatusText();
         UpdateInteractionText();
         UpdateRequiredItemsText();
-        
-        DebugWorkbenchSetup();
     }
     
     private void EnsureCollider()
@@ -67,12 +65,10 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
             BoxCollider boxCollider = gameObject.AddComponent<BoxCollider>();
             boxCollider.isTrigger = true;
             boxCollider.size = new Vector3(5, 5, 5);
-            Debug.Log($"{workbenchName}: Added large trigger collider");
         }
         else if (!collider.isTrigger)
         {
             collider.isTrigger = true;
-            Debug.Log($"{workbenchName}: Set existing collider to trigger");
             
             BoxCollider boxColl = collider as BoxCollider;
             if (boxColl != null)
@@ -88,38 +84,11 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         {
             infoPanel.SetActive(false);
             
-            // Force set the title to ensure it's correct
             if (workbenchTitleText != null)
             {
                 workbenchTitleText.text = workbenchName;
             }
-            else
-            {
-                Debug.LogError($"{workbenchName}: WorkbenchTitleText is not assigned!");
-            }
         }
-        else
-        {
-            Debug.LogError($"{workbenchName}: InfoPanel is not assigned!");
-        }
-    }
-    
-    private void DebugWorkbenchSetup()
-    {
-        Debug.Log($"=== {workbenchName} Setup Debug ===");
-        Debug.Log($"Info Panel: {(infoPanel == null ? "NOT ASSIGNED" : "Assigned")}");
-        Debug.Log($"Title Text: {(workbenchTitleText == null ? "NOT ASSIGNED" : "Assigned")}");
-        Debug.Log($"Items Text: {(requiredItemsText == null ? "NOT ASSIGNED" : "Assigned")}");
-        
-        if (workbenchTitleText != null)
-        {
-            Debug.Log($"Current Title: '{workbenchTitleText.text}'");
-            Debug.Log($"Expected Title: '{workbenchName}'");
-        }
-        
-        Debug.Log($"GameObject: {gameObject.name}");
-        Debug.Log($"Position: {transform.position}");
-        Debug.Log("=== End Debug ===");
     }
     
     public void Interact()
@@ -129,6 +98,7 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         TryMixChemical();
     }
     
+    // CHANGED FROM GetInteractText() TO GetInteractionText()
     public string GetInteractionText()
     {
         return InteractionText;
@@ -136,12 +106,9 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"{workbenchName}: OnTriggerEnter with {other.name}");
-        
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            Debug.Log($"{workbenchName}: Player entered trigger area");
             
             if (CanMixChemical())
             {
@@ -161,7 +128,6 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            Debug.Log($"{workbenchName}: Player left trigger area");
             HidePrompts();
             HideInfoPanel();
         }
@@ -173,7 +139,6 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         
         if (!CanMixChemical())
         {
-            Debug.Log("Cannot mix chemical. Missing required items.");
             UpdateInteractionText();
             return;
         }
@@ -188,17 +153,37 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
             Debug.LogError("ChemicalInventory instance not found!");
             return false;
         }
+
+        if (gravityGunChemicalRecipe == null)
+        {
+            Debug.LogError("Gravity Gun Chemical Recipe is not assigned!");
+            return false;
+        }
         
+        // Check required chemicals
         foreach (var chemicalReq in gravityGunChemicalRecipe.requiredChemicals)
         {
+            if (chemicalReq.chemical == null)
+            {
+                Debug.LogError("One of the required chemicals in the recipe is null!");
+                return false;
+            }
+
             if (!ChemicalInventory.Instance.HasChemical(chemicalReq.chemical, chemicalReq.amount))
             {
                 return false;
             }
         }
         
+        // Check required apparatus
         foreach (var apparatusReq in gravityGunChemicalRecipe.requiredApparatus)
         {
+            if (apparatusReq == null)
+            {
+                Debug.LogError("One of the required apparatus in the recipe is null!");
+                return false;
+            }
+
             if (!ChemicalInventory.Instance.HasApparatus(apparatusReq))
             {
                 return false;
@@ -215,30 +200,45 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         
         InteractionText = mixingText;
         
-        Debug.Log("Starting chemical mixing process...");
-        
+        // Remove required items from inventory
         foreach (var chemicalReq in gravityGunChemicalRecipe.requiredChemicals)
         {
             ChemicalInventory.Instance.RemoveChemical(chemicalReq.chemical, chemicalReq.amount);
         }
         
-        if (reactionParticles != null) reactionParticles.Play();
+        // Play visual effects
+        if (reactionParticles != null) 
+        {
+            reactionParticles.Play();
+        }
+        
         if (reactionLight != null)
         {
             reactionLight.enabled = true;
             reactionLight.color = gravityGunChemicalRecipe.reactionColor;
         }
-        if (reactionSound != null) AudioSource.PlayClipAtPoint(reactionSound, transform.position);
-        if (statusText != null) statusText.text = "Mixing in progress...";
         
+        // Play audio effects safely
+        PlayAudioEffect(reactionSound);
+        
+        if (statusText != null) 
+        {
+            statusText.text = "Mixing in progress...";
+        }
+        
+        // Wait for mixing time
         yield return new WaitForSeconds(gravityGunChemicalRecipe.mixTime);
         
-        if (reactionLight != null) reactionLight.enabled = false;
-        if (successSound != null) AudioSource.PlayClipAtPoint(successSound, transform.position);
+        // Clean up effects
+        if (reactionLight != null)
+        {
+            reactionLight.enabled = false;
+        }
         
+        PlayAudioEffect(successSound);
+        
+        // Spawn the result
         SpawnGravityGunChemical();
-        
-        Debug.Log("Chemical mixing complete!");
         
         InteractionText = completeText;
         UpdateStatusText();
@@ -246,6 +246,21 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         
         StartCoroutine(ResetInteractionTextAfterDelay(3f));
         isMixing = false;
+    }
+    
+    private void PlayAudioEffect(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            // Create temporary GameObject for audio to avoid issues when object is destroyed
+            GameObject audioGameObject = new GameObject("TempAudio");
+            AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
+            audioSource.clip = clip;
+            audioSource.Play();
+            
+            // Destroy the temporary object after the clip finishes
+            Destroy(audioGameObject, clip.length);
+        }
     }
     
     private IEnumerator ResetInteractionTextAfterDelay(float delay)
@@ -256,17 +271,20 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
     
     private void SpawnGravityGunChemical()
     {
-        if (gravityGunChemicalPrefab == null || spawnPoint == null)
+        if (gravityGunChemicalPrefab == null)
         {
-            Debug.LogError("Gravity Gun Chemical Prefab or Spawn Point is not assigned!");
+            Debug.LogError("Gravity Gun Chemical Prefab is not assigned!");
+            return;
+        }
+
+        if (spawnPoint == null)
+        {
+            Debug.LogError("Spawn Point is not assigned!");
             return;
         }
 
         GameObject chemical = Instantiate(gravityGunChemicalPrefab, spawnPoint.position, spawnPoint.rotation);
-        chemical.SetActive(true);
         chemical.transform.localScale = Vector3.one * spawnScale;
-        
-        Debug.Log($"Spawned gravity gun chemical at scale: {spawnScale}");
     }
 
     private void UpdateStatusText()
@@ -302,21 +320,28 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
     
     private void UpdateRequiredItemsText()
     {
-        if (requiredItemsText == null) 
+        if (requiredItemsText == null) return;
+        
+        if (gravityGunChemicalRecipe == null)
         {
-            Debug.LogError("RequiredItemsText is not assigned!");
+            requiredItemsText.text = "Recipe not assigned!";
+            return;
+        }
+
+        if (ChemicalInventory.Instance == null)
+        {
+            requiredItemsText.text = "Inventory not found!";
             return;
         }
         
         string itemsText = "Required Items:\n\n<b>Chemicals:</b>\n";
         
+        // Chemicals section
         foreach (var chemicalReq in gravityGunChemicalRecipe.requiredChemicals)
         {
             if (chemicalReq.chemical == null) continue;
             
-            bool hasChemical = ChemicalInventory.Instance != null && 
-                              ChemicalInventory.Instance.HasChemical(chemicalReq.chemical, chemicalReq.amount);
-            
+            bool hasChemical = ChemicalInventory.Instance.HasChemical(chemicalReq.chemical, chemicalReq.amount);
             string chemicalName = chemicalReq.chemical.chemicalName ?? "Unknown Chemical";
             string status = hasChemical ? "<color=green>✓</color>" : "<color=red>✗</color>";
             
@@ -324,13 +349,13 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         }
         
         itemsText += "\n<b>Apparatus:</b>\n";
+        
+        // Apparatus section
         foreach (var apparatusReq in gravityGunChemicalRecipe.requiredApparatus)
         {
             if (apparatusReq == null) continue;
             
-            bool hasApparatus = ChemicalInventory.Instance != null && 
-                               ChemicalInventory.Instance.HasApparatus(apparatusReq);
-            
+            bool hasApparatus = ChemicalInventory.Instance.HasApparatus(apparatusReq);
             string apparatusName = apparatusReq.apparatusName ?? "Unknown Apparatus";
             string status = hasApparatus ? "<color=green>✓</color>" : "<color=red>✗</color>";
             
@@ -354,17 +379,10 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
     
     private void ShowInfoPanel()
     {
-        Debug.Log($"{workbenchName}: ShowInfoPanel called");
-        
         if (infoPanel != null)
         {
             infoPanel.SetActive(true);
             UpdateRequiredItemsText();
-            Debug.Log($"{workbenchName}: Info panel should now be visible");
-        }
-        else
-        {
-            Debug.LogError($"{workbenchName}: InfoPanel is not assigned!");
         }
     }
     
@@ -401,38 +419,12 @@ public class ChemicalWorkbench : MonoBehaviour, IInteractable
         }
     }
     
-    // Editor-only: Update title when values change in inspector
-    private void OnValidate()
-    {
-        #if UNITY_EDITOR
-        if (workbenchTitleText != null && !string.IsNullOrEmpty(workbenchName))
-        {
-            workbenchTitleText.text = workbenchName;
-        }
-        #endif
-    }
-    
     // Update title when object becomes enabled
     private void OnEnable()
     {
         if (workbenchTitleText != null && !string.IsNullOrEmpty(workbenchName))
         {
             workbenchTitleText.text = workbenchName;
-        }
-    }
-    
-    // Optional: Testing
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SpawnGravityGunChemical();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            UpdateInteractionText();
-            UpdateRequiredItemsText();
         }
     }
 }

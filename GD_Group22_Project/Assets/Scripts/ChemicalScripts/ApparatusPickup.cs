@@ -1,7 +1,5 @@
 using UnityEngine;
 
-using UnityEngine;
-
 public class ApparatusPickup : MonoBehaviour, IInteractable
 {
     [Header("Apparatus Settings")]
@@ -20,7 +18,17 @@ public class ApparatusPickup : MonoBehaviour, IInteractable
     {
         apparatusRenderer = GetComponent<Renderer>();
         pickupCollider = GetComponent<Collider>();
-        interactText += apparatus != null ? apparatus.apparatusName : "Apparatus";
+        
+        // Safe null check for apparatus
+        if (apparatus != null)
+        {
+            interactText += apparatus.apparatusName;
+        }
+        else
+        {
+            interactText += "Apparatus";
+            Debug.LogError("ApparatusItem is not assigned in the inspector!", this);
+        }
     }
     
     public void Interact()
@@ -32,9 +40,17 @@ public class ApparatusPickup : MonoBehaviour, IInteractable
     
     private void CollectApparatus()
     {
+        // Safe null check for ChemicalInventory
         if (ChemicalInventory.Instance == null)
         {
-            Debug.LogError("ChemicalInventory instance not found!");
+            Debug.LogError("ChemicalInventory instance not found! Make sure it exists in the scene.", this);
+            return;
+        }
+        
+        // Safe null check for apparatus
+        if (apparatus == null)
+        {
+            Debug.LogError("Cannot collect null apparatus!", this);
             return;
         }
         
@@ -43,19 +59,52 @@ public class ApparatusPickup : MonoBehaviour, IInteractable
         isCollected = true;
         
         // Play effects
+        PlayCollectionEffects();
+        
+        // Hide the object immediately
+        HideObject();
+        
+        Debug.Log($"Collected {apparatus.apparatusName}");
+        
+        // Destroy after effects finish
+        Destroy(gameObject, 2f);
+    }
+    
+    private void PlayCollectionEffects()
+    {
+        // Handle particle effects
         if (collectParticles != null)
         {
+            // Detach particles so they don't get destroyed with the object
+            collectParticles.transform.SetParent(null);
             collectParticles.Play();
+            
+            // Destroy particles after they finish
+            Destroy(collectParticles.gameObject, collectParticles.main.duration);
         }
         
+        // Handle sound
         if (collectSound != null)
         {
-            AudioSource.PlayClipAtPoint(collectSound, transform.position);
+            // Create a temporary GameObject for playing the sound
+            GameObject soundGameObject = new GameObject("TempAudio");
+            AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+            audioSource.clip = collectSound;
+            audioSource.Play();
+            
+            // Destroy the temporary object after the clip finishes
+            Destroy(soundGameObject, collectSound.length);
         }
+    }
+    
+    private void HideObject()
+    {
+        // Disable renderer and collider
+        if (apparatusRenderer != null) 
+            apparatusRenderer.enabled = false;
         
-        // Immediately hide the object
-        if (apparatusRenderer != null) apparatusRenderer.enabled = false;
-        if (pickupCollider != null) pickupCollider.enabled = false;
+        if (pickupCollider != null) 
+            pickupCollider.enabled = false;
         
         // Hide all child renderers
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
@@ -64,17 +113,34 @@ public class ApparatusPickup : MonoBehaviour, IInteractable
             renderer.enabled = false;
         }
         
-        Debug.Log($"Collected {apparatus.apparatusName}");
-        
-        // Destroy after effects finish
-        Destroy(gameObject, 2f);
+        // Also disable all colliders in children
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = false;
+        }
+    }
+    
+    public string GetInteractText()
+    {
+        return interactText;
     }
     
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isCollected)
         {
+            // Optional: Show UI prompt here
             Debug.Log(interactText);
+        }
+    }
+    
+    // Optional: Add this for better build debugging
+    private void OnDestroy()
+    {
+        if (isCollected)
+        {
+            Debug.Log($"Apparatus pickup destroyed: {apparatus?.apparatusName}");
         }
     }
 }
