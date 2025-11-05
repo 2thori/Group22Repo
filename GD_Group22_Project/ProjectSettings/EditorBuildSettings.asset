@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: ab084963182ccce41a034c313fbee51e
   - enabled: 1
+    path: Assets/Scenes/Game Scene v1.unity
+    guid: 4966f29ff15fec74fbfe4d39c4ebe657
+  - enabled: 1
     path: Assets/Scenes/BegCutSin.unity
     guid: 9a54e0c35059ae749b8b0e54d76e5b1f
   - enabled: 1
