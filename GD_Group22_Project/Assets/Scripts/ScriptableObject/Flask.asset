@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ApparatusItem
   apparatusName: Flask
   icon: {fileID: 0}
-  physicalItemPrefab: {fileID: 919132149155446097, guid: 4ef74bd2abc866248b5db67d7df3841b, type: 3}
+  physicalItemPrefab: {fileID: 2565368139036677436, guid: d130e267ce1ab5d4ab3159b9fc03973a, type: 3}

@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 450d40090b427614b9e9921784a4db9e, type: 2}
   mixTime: 5
   reactionColor: {r: 0, g: 0, b: 1, a: 1}
-  resultingChemicalName: 
+  resultingChemicalName: ElectroFluid
