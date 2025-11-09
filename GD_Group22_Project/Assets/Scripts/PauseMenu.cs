@@ -4,16 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool PausedGame = false;
-    public GameObject pauseMenu;
+    [SerializeField] public static bool PausedGame = false;
 
-    
-    void Update()
+    [SerializeField] public GameObject pauseMenu;
+    [SerializeField] public GameObject gameHUD;
+    [SerializeField] public GameObject fpsHUD;
+
+    [SerializeField] public KeyCode pauseKey = KeyCode.Escape;
+
+    public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(pauseKey))
         {
-            Debug.Log("Escape Pressed");
-            
             if (PausedGame)
             {
                 Resume();
@@ -27,22 +29,30 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     { 
-        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        PausedGame = true;  
+        gameHUD.SetActive(true);
+        fpsHUD.SetActive(true);
+        pauseMenu.SetActive(false);
+        PausedGame = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+
     }
 
-    void Pause()
-    { 
-        pauseMenu.SetActive(true);
+    public void Pause()
+    {
         Time.timeScale = 0f;
+        gameHUD.SetActive(false);
+        fpsHUD.SetActive(false);
+        pauseMenu.SetActive(true);
         PausedGame = true;
+        //Cursor.lockState = CursorLockMode.None;
+        
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenuInteractive");
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()

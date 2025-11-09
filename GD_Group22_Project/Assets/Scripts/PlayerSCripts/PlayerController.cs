@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //[SerializeField] PauseMenu pMenu;
+    
     [SerializeField] Transform playerCamera = null;
     [SerializeField] float mouseSensitivity = 3.5f;
     [SerializeField] float walkSpeed = 6f;
@@ -27,6 +29,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //Pause functionality attempt
+        pMenu.enabled = false;
+        
         controller = GetComponent<CharacterController>();
         
         // Initialize audio source with more robust setup
@@ -63,6 +68,8 @@ public class PlayerController : MonoBehaviour
         UpdateMouseLook();
         UpdateMovement();
         UpdateFootstepSounds();
+        //pMenu.Update();
+
     }
 
     void UpdateMouseLook()
