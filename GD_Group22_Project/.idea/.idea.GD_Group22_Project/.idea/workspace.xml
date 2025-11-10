@@ -10,6 +10,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/Models/Martin.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Martin.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Animationim.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Animationim.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
@@ -20,6 +21,11 @@
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Positive System SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Positive System SDF.asset" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+>>>>>>> Stashed changes
 =======
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" afterDir="false" />
@@ -164,7 +170,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <workItem from="1762743712837" duration="5146000" />
+=======
+      <workItem from="1762726156163" duration="1136000" />
+>>>>>>> Stashed changes
 =======
       <workItem from="1762726156163" duration="1136000" />
 >>>>>>> Stashed changes
