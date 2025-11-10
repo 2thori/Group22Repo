@@ -6,11 +6,34 @@
   <component name="ChangeListManager">
     <list default="true" id="6fe1f42b-d950-4e5d-805b-3c6acb55f885" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD_Group22_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Flask 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Flask 1.prefab" afterDir="false" />
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Martin.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Martin.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Animationim.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Animationim.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ApparatusPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ApparatusPickup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalWorkbench.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChemicalScripts/ChemicalWorkbench.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObject/Chemical Recipe.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObject/Chemical Recipe.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartCollectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGunScripts/GravityGunPartCollectable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemInteractionScripts/PlayerInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemInteractionScripts/PlayerInteractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/autobus-bold-font/Autobusbold-1ynL SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/autobus-bold-font/Autobusbold-1ynL SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/xeno-seeker-font/XenoSeeker-xRxDR SDF.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Positive System SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Positive System SDF.asset" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+>>>>>>> Stashed changes
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+>>>>>>> Stashed changes
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GrayBoxScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSCripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +44,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animator/SimpleCharacterAnimator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@63585d5be1b1/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.rendering.light-transport@9bd588f963c0/Runtime/UnifiedRayTracing/Common/GeometryPool/GeometryPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity3d-PhysicsGun/Unity3d-PhysicsGun/Assets/OutlineEffect/OutlineEffect.cs" root0="SKIP_HIGHLIGHTING" />
@@ -130,6 +154,19 @@
       <workItem from="1761161324201" duration="4099000" />
       <workItem from="1761490874392" duration="583000" />
       <workItem from="1761500806392" duration="3599000" />
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+      <workItem from="1762743712837" duration="5146000" />
+=======
+      <workItem from="1762726156163" duration="1136000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1762726156163" duration="1136000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1762726156163" duration="1136000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ApparatusItem
   apparatusName: Beaker
   icon: {fileID: 0}
-  physicalItemPrefab: {fileID: 919132149155446097, guid: 59669aeb42b777b4aa79da70b98d9586, type: 3}
+  physicalItemPrefab: {fileID: 4758850666750034374, guid: 40b13021d67bd694596851906b0ee711, type: 3}

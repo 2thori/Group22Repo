@@ -14,6 +14,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkStepInterval = 0.5f;
     [SerializeField] private float soundVolume = 0.7f;
 
+    [Header("Gun System")]
+    [SerializeField] private Transform gunPivot = null;
+    [SerializeField] private GameObject gunModel = null;
+    [SerializeField] private float gunFollowSpeed = 8f;
+    [SerializeField] private Vector3 gunOffset = new Vector3(0.3f, -0.2f, 0.5f);
+    [SerializeField] private KeyCode toggleGunKey = KeyCode.G;
+
     private AudioSource audioSource;
     private float cameraPitch = 0.0f;
     private CharacterController controller = null;
@@ -25,14 +32,21 @@ public class PlayerController : MonoBehaviour
     private float stepTimer = 0f;
     private Vector2 lastInputDir = Vector2.zero;
 
+    // Gun system variables
+    private bool isHoldingGun = false;
+    private Vector3 currentGunRotation;
+
     void Start()
     {
+<<<<<<< Updated upstream
+=======
         //Pause functionality attempt
         //pMenu.enabled = false;
         
+>>>>>>> Stashed changes
         controller = GetComponent<CharacterController>();
         
-        // Initialize audio source with more robust setup
+        // Initialize audio source
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -46,19 +60,38 @@ public class PlayerController : MonoBehaviour
         audioSource.playOnAwake = false;
         audioSource.loop = false;
         
-        // Log audio setup
-        Debug.Log($"AudioSource initialized: {audioSource != null}");
-        Debug.Log($"Footstep sounds assigned: {footstepSounds != null && footstepSounds.Length > 0}");
-        if (footstepSounds != null && footstepSounds.Length > 0)
-        {
-            Debug.Log($"First footstep sound: {footstepSounds[0]}");
-        }
+        // Initialize gun system
+        InitializeGunSystem();
         
         if (lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
+
+    void InitializeGunSystem()
+    {
+        // Create gun pivot if not assigned
+        if (gunPivot == null)
+        {
+            GameObject pivotObject = new GameObject("GunPivot");
+            gunPivot = pivotObject.transform;
+            gunPivot.SetParent(transform);
+            Debug.Log("Created GunPivot automatically");
+        }
+
+        // Disable gun model at start
+        if (gunModel != null)
+        {
+            gunModel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("No gun model assigned to PlayerController");
+        }
+
+        currentGunRotation = Vector3.zero;
     }
 
     void Update()
@@ -69,7 +102,8 @@ public class PlayerController : MonoBehaviour
         UpdateMouseLook();
         UpdateMovement();
         UpdateFootstepSounds();
-        
+        UpdateGunInput();
+        UpdateGunPosition();
     }
 
     void UpdateMouseLook()
@@ -93,7 +127,10 @@ public class PlayerController : MonoBehaviour
         lastInputDir = inputDir;
 
         Vector3 move = (transform.forward * inputDir.y + transform.right * inputDir.x);
-        controller.Move(move * walkSpeed * Time.deltaTime);
+        
+        // Adjust speed if holding gun
+        float currentSpeed = isHoldingGun ? walkSpeed * 0.8f : walkSpeed;
+        controller.Move(move * currentSpeed * Time.deltaTime);
 
         if (controller.isGrounded && velocity.y < 0)
         {
@@ -106,18 +143,11 @@ public class PlayerController : MonoBehaviour
 
     void UpdateFootstepSounds()
     {
-        // Debug movement state occasionally
-        if (Random.Range(0, 500) < 1) // Roughly every 500 frames
-        {
-            Debug.Log($"Moving: {isMoving}, Grounded: {controller.isGrounded}, AudioSource: {audioSource != null}");
-        }
-
         if (wasMoving && !isMoving)
         {
             if (audioSource.isPlaying)
             {
                 audioSource.Stop();
-                Debug.Log("Stopped footstep sound - no longer moving");
             }
         }
 
@@ -160,7 +190,125 @@ public class PlayerController : MonoBehaviour
 
         audioSource.pitch = Random.Range(0.9f, 1.1f);
         audioSource.PlayOneShot(clipToPlay, soundVolume);
+    }
+
+    void UpdateGunInput()
+    {
+        // Toggle gun with G key
+        if (Input.GetKeyDown(toggleGunKey))
+        {
+            ToggleGun();
+        }
+
+        // You can also add other gun-related input here
+        // For example, using the gravity gun:
+        if (isHoldingGun && Input.GetMouseButtonDown(0))
+        {
+            UseGravityGun();
+        }
+    }
+
+    void UpdateGunPosition()
+    {
+        if (!isHoldingGun || gunPivot == null || playerCamera == null) 
+            return;
+
+        // Make gun follow camera rotation smoothly
+        Vector3 cameraRotation = playerCamera.eulerAngles;
         
-        Debug.Log($"Playing footstep sound: {clipToPlay.name}");
+        // Convert to -180 to 180 range for smooth interpolation
+        float cameraPitchNormalized = cameraRotation.x;
+        if (cameraPitchNormalized > 180f) 
+            cameraPitchNormalized -= 360f;
+        
+        // Smoothly interpolate gun rotation
+        currentGunRotation = Vector3.Lerp(currentGunRotation, 
+                                        new Vector3(cameraPitchNormalized, cameraRotation.y, 0f), 
+                                        gunFollowSpeed * Time.deltaTime);
+        
+        gunPivot.rotation = Quaternion.Euler(currentGunRotation);
+
+        // Position gun relative to camera
+        Vector3 targetPosition = playerCamera.position + 
+                               playerCamera.forward * gunOffset.z +
+                               playerCamera.right * gunOffset.x +
+                               playerCamera.up * gunOffset.y;
+        
+        gunPivot.position = Vector3.Lerp(gunPivot.position, targetPosition, gunFollowSpeed * Time.deltaTime);
+    }
+
+    void ToggleGun()
+    {
+        isHoldingGun = !isHoldingGun;
+        
+        if (gunModel != null)
+        {
+            gunModel.SetActive(isHoldingGun);
+            Debug.Log($"Gun {(isHoldingGun ? "equipped" : "unequipped")}");
+        }
+
+        // You can add sound effects here for equip/unequip
+        // PlayGunEquipSound(isHoldingGun);
+    }
+
+    void UseGravityGun()
+    {
+        // Add your gravity gun functionality here
+        Debug.Log("Gravity gun used!");
+        
+        // Example: Shoot raycast to detect objects
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, 10f))
+        {
+            Debug.Log($"Gravity gun hit: {hit.transform.name}");
+            
+            // Add your gravity gun effects here
+            // For example, apply force to rigidbodies
+            Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddForce(playerCamera.forward * 10f, ForceMode.Impulse);
+            }
+        }
+    }
+
+    // Public methods for other scripts to control the gun
+    public void EquipGun()
+    {
+        if (!isHoldingGun)
+        {
+            ToggleGun();
+        }
+    }
+
+    public void UnequipGun()
+    {
+        if (isHoldingGun)
+        {
+            ToggleGun();
+        }
+    }
+
+    public bool IsHoldingGun()
+    {
+        return isHoldingGun;
+    }
+
+    // Method to call when player picks up the gravity gun item
+    public void OnPickupGravityGun()
+    {
+        EquipGun();
+        Debug.Log("Picked up gravity gun!");
+    }
+
+    // Optional: Adjust gun position at runtime
+    public void SetGunOffset(Vector3 newOffset)
+    {
+        gunOffset = newOffset;
+    }
+
+    public void SetGunFollowSpeed(float speed)
+    {
+        gunFollowSpeed = speed;
     }
 }
