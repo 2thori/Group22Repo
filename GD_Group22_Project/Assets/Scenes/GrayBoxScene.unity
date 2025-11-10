@@ -8531,6 +8531,7 @@ MonoBehaviour:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   gameHUD: {fileID: 806460335}
   fpsHUD: {fileID: 5129834239346032234}
   optionsPanel: {fileID: 806460335}
@@ -8540,6 +8541,8 @@ MonoBehaviour:
   optionsButton: {fileID: 7761832375367496945}
   PausedGame: 0
   pauseKey: 27
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -29842,6 +29845,7 @@ CanvasRenderer:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!4 &8052196608141683074
 Transform:
   m_ObjectHideFlags: 0
@@ -29875,6 +29879,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

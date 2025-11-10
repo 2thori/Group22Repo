@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7c7f68a7f8650644fa0bc876794f76c9
+guid: 0f1a598216fdb6747a035f30997ecda2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -29,22 +29,20 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     clipAnimations:
     - serializedVersion: 16
       name: root|Action.004_rig_Martin
       takeName: root|Action.004_rig_Martin
       internalID: -4409850615126791353
       firstFrame: 0
-      lastFrame: 109
+      lastFrame: 249
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -95,7 +93,7 @@ ModelImporter:
       takeName: root|Grab_rig
       internalID: 4256715901475353185
       firstFrame: 0
-      lastFrame: 16
+      lastFrame: 249
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -131,7 +129,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -294,7 +292,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: root|Walking Start_rig
+      name: Walking
       takeName: root|Walking Start_rig
       internalID: 4776937212355042991
       firstFrame: 0
@@ -302,9 +300,9 @@ ModelImporter:
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0
+      cycleOffset: 1
       loop: 0
-      hasAdditiveReferencePose: 0
+      hasAdditiveReferencePose: 1
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
@@ -322,12 +320,6 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-=======
-    clipAnimations: []
->>>>>>> Stashed changes
-=======
-    clipAnimations: []
->>>>>>> Stashed changes
     isReadable: 0
   meshes:
     lODScreenPercentages: []
