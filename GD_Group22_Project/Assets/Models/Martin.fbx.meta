@@ -35,6 +35,7 @@ ModelImporter:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     clipAnimations:
     - serializedVersion: 16
       name: root|Action.004_rig_Martin
@@ -326,6 +327,9 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+=======
+    clipAnimations: []
+>>>>>>> Stashed changes
 =======
     clipAnimations: []
 >>>>>>> Stashed changes
