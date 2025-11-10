@@ -38,12 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-<<<<<<< Updated upstream
-=======
-        //Pause functionality attempt
-        //pMenu.enabled = false;
-        
->>>>>>> Stashed changes
+        // Remove the conflict markers and choose one version:
         controller = GetComponent<CharacterController>();
         
         // Initialize audio source
